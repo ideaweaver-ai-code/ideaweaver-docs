@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!mkdocs.yml
+!docs/
+!docs/**/*
+!docs/images/
+!docs/stylesheets/ 
