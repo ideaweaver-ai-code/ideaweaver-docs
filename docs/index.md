@@ -1,4 +1,4 @@
-# IdeaWeaver Model Registry
+# IdeaWeaver
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -528,7 +528,7 @@ To track experiments and register models with MLflow, follow these steps:
 
 ---
 
-### IdeaWeaver Model Registry Integrations
+### ideaweaver Integrations
 
 ![IdeaWeaver Registry Support](images/registry-support.png)
 
