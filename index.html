@@ -1,0 +1,3839 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A comprehensive CLI tool for AI model training, evaluation, and deployment">
+      
+      
+        <meta name="author" content="IdeaWeaver Team">
+      
+      
+        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/">
+      
+      
+      
+        <link rel="next" href="getting-started/installation/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>IdeaWeaver Model Registry</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ideaweaver-model-registry" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="IdeaWeaver Model Registry" class="md-header__button md-logo" aria-label="IdeaWeaver Model Registry" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IdeaWeaver Model Registry
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ideaweaver-ai-code/ideaweaver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ideaweaver-ai-code/ideaweaver
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="getting-started/installation/" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="downloads/overview/" class="md-tabs__link">
+          
+  
+  
+  Downloads
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="validation/overview/" class="md-tabs__link">
+          
+  
+  
+  Validation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="rag/overview/" class="md-tabs__link">
+          
+  
+  
+  RAG
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="training/train-output/" class="md-tabs__link">
+          
+  
+  
+  Training
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="fine-tuning/overview/" class="md-tabs__link">
+          
+  
+  
+  Fine-tuning
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="agent/overview/" class="md-tabs__link">
+          
+  
+  
+  Agent
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="mcp/github/" class="md-tabs__link">
+          
+  
+  
+  MCP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="evaluation/" class="md-tabs__link">
+          
+  
+  
+  Evaluation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="community/contributing/" class="md-tabs__link">
+          
+  
+  
+  Community
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="IdeaWeaver Model Registry" class="md-nav__button md-logo" aria-label="IdeaWeaver Model Registry" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    IdeaWeaver Model Registry
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ideaweaver-ai-code/ideaweaver" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ideaweaver-ai-code/ideaweaver
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Key Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ Key Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-version-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Version Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-usage-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Usage: Step-by-Step
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Usage: Step-by-Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Download a Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validate-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Validate Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Model Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-model-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Model Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-agent-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Agent Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-finetuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Finetuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rag-retrieval-augmented-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. RAG (Retrieval-Augmented Generation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-mcp-model-context-protocol-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. MCP (Model Context Protocol) Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-capabilities-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Capabilities Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-training-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Training &amp; Fine-tuning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Training &amp; Fine-tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tuning-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-fine-tuned-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing Fine-tuned Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCP Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-benchmarking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation &amp; Benchmarking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Example Workflows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Example Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-model-development-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Model Development Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-agent-content-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Agent Content Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Enterprise Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Performance Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Performance Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-speed-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Speed Improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-system-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG System Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guides
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Community
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Training
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorboard-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard UI Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weights-biases-wandb-online-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weights &amp; Biases (wandb) Online Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wandb-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      wandb UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlflow-model-registration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLflow Model Registration Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MLflow Model Registration Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ideaweaver-model-registry-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      IdeaWeaver Model Registry Integrations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-start-the-mlflow-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Start the MLflow server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-train-and-register-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Train and register a model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Train and register a model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mlflow-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLflow UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-a-model-to-hugging-face-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pushing a Model to Hugging Face Hub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pushing a Model to Hugging Face Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hugging Face UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-a-model-to-dagshub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pushing a Model to DagsHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pushing a Model to DagsHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dagshub-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      DagsHub UI Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comet-model-registry-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comet Model Registry Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comet Model Registry Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-and-registering-a-model-with-comet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training and Registering a Model with Comet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comet-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comet UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-bedrock-bring-your-own-model-byom-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS Bedrock Bring-Your-Own-Model (BYOM) Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS Bedrock Bring-Your-Own-Model (BYOM) Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-the-model-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Prepare the model artifacts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-inside-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set-up inside AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-optional-but-recommended-security-network-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. (Optional but recommended) security &amp; network controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-pre-flight-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick pre-flight checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Downloads
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Downloads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="downloads/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="downloads/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Validation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Validation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="validation/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="validation/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    RAG
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            RAG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rag/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rag/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rag/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Training
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="training/train-output/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Training Output
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fine-tuning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Fine-tuning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fine-tuning/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fine-tuning/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fine-tuning/examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agent
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Agent
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agent/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agent/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MCP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            MCP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mcp/github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Community
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Community
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="community/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contributing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="community/support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Support
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#key-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✨ Key Features
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="✨ Key Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#python-version-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Python Version Compatibility
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Quick Start
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-usage-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Usage: Step-by-Step
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Usage: Step-by-Step">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Download a Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validate-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Validate Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Model Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-model-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Model Evaluation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-agent-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Agent Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-finetuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Finetuning
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-rag-retrieval-augmented-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. RAG (Retrieval-Augmented Generation)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-mcp-model-context-protocol-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. MCP (Model Context Protocol) Integration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Architecture
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      System Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Architecture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-capabilities-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Capabilities Comparison
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Core Components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Core Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-training-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Training &amp; Fine-tuning
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Training &amp; Fine-tuning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fine-tuning-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fine-tuning Examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listing-fine-tuned-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Listing Fine-tuned Models
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG Systems
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      MCP Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-benchmarking" class="md-nav__link">
+    <span class="md-ellipsis">
+      Evaluation &amp; Benchmarking
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Example Workflows
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Example Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-model-development-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Model Development Pipeline
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-agent-content-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multi-Agent Content Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌟 Enterprise Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Performance Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Performance Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-speed-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training Speed Improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-system-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAG System Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 Getting Started
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📚 Documentation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📚 Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getting-started_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Started
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tutorials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reference
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Guides
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#community" class="md-nav__link">
+    <span class="md-ellipsis">
+      🤝 Community
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 License
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      CLI Usage Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CLI Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Training
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorboard-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard UI Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weights-biases-wandb-online-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weights &amp; Biases (wandb) Online Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wandb-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      wandb UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent Commands
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mlflow-model-registration-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLflow Model Registration Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MLflow Model Registration Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ideaweaver-model-registry-integrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      IdeaWeaver Model Registry Integrations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-start-the-mlflow-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Start the MLflow server
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-train-and-register-a-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Train and register a model
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Train and register a model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mlflow-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      MLflow UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-a-model-to-hugging-face-hub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pushing a Model to Hugging Face Hub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pushing a Model to Hugging Face Hub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hugging-face-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hugging Face UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pushing-a-model-to-dagshub" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pushing a Model to DagsHub
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pushing a Model to DagsHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dagshub-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      DagsHub UI Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comet-model-registry-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comet Model Registry Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Comet Model Registry Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-and-registering-a-model-with-comet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training and Registering a Model with Comet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comet-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comet UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aws-bedrock-bring-your-own-model-byom-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      AWS Bedrock Bring-Your-Own-Model (BYOM) Deployment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AWS Bedrock Bring-Your-Own-Model (BYOM) Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-the-model-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Prepare the model artifacts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-up-inside-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Set-up inside AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-optional-but-recommended-security-network-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. (Optional but recommended) security &amp; network controls
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-pre-flight-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick pre-flight checklist
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Command
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-output_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ideaweaver-model-registry">IdeaWeaver Model Registry<a class="headerlink" href="#ideaweaver-model-registry" title="Permanent link">&para;</a></h1>
+<p><a href="https://www.python.org/downloads/release/python-3120/"><img alt="Python 3.12" src="https://img.shields.io/badge/python-3.12-blue.svg" /></a>
+<a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
+<a href="https://your-username.github.io/ideaweaver/"><img alt="Documentation" src="https://img.shields.io/badge/docs-mkdocs-blue.svg" /></a>
+<a href="#quick-start"><img alt="CLI Ready" src="https://img.shields.io/badge/CLI-Ready-green.svg" /></a></p>
+<p>A comprehensive CLI tool for AI model training, evaluation, and deployment with advanced RAG capabilities and MCP (Model Context Protocol) integration. Train, fine-tune, and deploy language models with enterprise-grade features. Visit: https://github.com/ideaweaver-ai-code/ideaweaver</p>
+<h2 id="key-features">✨ Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<p><strong>One-Click Setup</strong> - Automated Python 3.12 environment with all dependencies<br />
+<strong>Advanced RAG</strong> - Traditional + Agentic RAG with multiple vector stores<br />
+<strong>Flexible Training</strong> - LoRA, QLoRA, and full fine-tuning support<br />
+<strong>Comprehensive Evaluation</strong> - Built-in benchmarks + custom metrics<br />
+<strong>MCP Integration</strong> - GitHub, Terraform and AWS connectors <br />
+<strong>Multi-Agent Workflows</strong> - CrewAI pipeline support<br />
+<strong>Configuration Validation</strong> - YAML validation and schema checking    </p>
+<blockquote>
+<p><strong>NOTE:</strong></p>
+<h3 id="python-version-compatibility">Python Version Compatibility<a class="headerlink" href="#python-version-compatibility" title="Permanent link">&para;</a></h3>
+<p>We are currently using <strong>Python 3.12</strong> for the <code>ideaweaver</code> project because some of the tools and dependencies we rely on do not yet support Python 3.13. Once those tools officially support Python 3.13, we plan to upgrade the project accordingly.</p>
+</blockquote>
+<h2 id="quick-start">🚀 Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># One-line installation</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-LsSf<span class="w"> </span>https://raw.githubusercontent.com/ideaweaver-ai-code/ideaweaver/main/setup_environments.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Or traditional installation</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ideaweaver-ai-code/ideaweaver.git
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>ideaweaver
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>chmod<span class="w"> </span>+x<span class="w"> </span>setup_environments.sh
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>./setup_environments.sh
+</code></pre></div>
+<h3 id="environment-setup">Environment Setup<a class="headerlink" href="#environment-setup" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>⚠️ Important:</strong> IdeaWeaver requires Python 3.12. Make sure you have Python 3.12 installed before proceeding.</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Check Python Version</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>--version
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Python<span class="w"> </span><span class="m">3</span>.12.10
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Activate the Environment</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># On Unix/macOS</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Verify Installation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ideaweaver<span class="w"> </span>--help
+</code></pre></div></p>
+</li>
+</ol>
+<p><strong>Expected Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Usage: ideaweaver [OPTIONS] COMMAND [ARGS]...
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  IdeaWeaver Model Training CLI - A comprehensive tool for AI model training,
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>  evaluation, and deployment.
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  Features include LoRA/QLoRA fine-tuning, RAG systems, MCP integration, and
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>  enterprise-grade model management. For detailed documentation and examples,
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>  visit: https://github.com/ideaweaver-ai-code/ideaweaver
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>Options:
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>  --help  Show this message and exit.
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>Commands:
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>  agent       Intelligent agent workflows for creative and analytical tasks.
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>  download    Download a model from Hugging Face Hub
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>  evaluate    Evaluate a model using lm-evaluation-harness with...
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>  finetune    Supervised fine-tuning commands with LoRA, QLoRA, and full...
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>  list-tasks  List all available evaluation tasks from lm-evaluation-harness
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>  mcp         Model Context Protocol (MCP) integration commands
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>  rag         RAG (Retrieval-Augmented Generation) commands
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>  train       Train a model with AutoTrain Advanced.
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>  validate    Validate a configuration file
+</code></pre></div></p>
+<p>If you see the help menu, your environment is set up correctly!</p>
+<blockquote>
+<p><strong>Note:</strong> If you need to install Python 3.12:
+- <strong>macOS:</strong> <code>brew install python@3.12</code>
+- <strong>Ubuntu/Debian:</strong> <code>sudo apt install python3.12</code></p>
+</blockquote>
+<hr />
+<h2 id="core-usage-step-by-step">Core Usage: Step-by-Step<a class="headerlink" href="#core-usage-step-by-step" title="Permanent link">&para;</a></h2>
+<h3 id="1-download-a-model">1. Download a Model<a class="headerlink" href="#1-download-a-model" title="Permanent link">&para;</a></h3>
+<p>Download models from Hugging Face Hub for local use or further training.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ideaweaver<span class="w"> </span>download<span class="w"> </span>microsoft/DialoGPT-medium
+</code></pre></div>
+<blockquote>
+<p><strong>Tip:</strong> Set your Hugging Face token for private/gated models.</p>
+</blockquote>
+<hr />
+<h3 id="2-validate-configuration">2. Validate Configuration<a class="headerlink" href="#2-validate-configuration" title="Permanent link">&para;</a></h3>
+<p>Check your YAML config or dataset before training to catch errors early.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ideaweaver<span class="w"> </span>validate<span class="w"> </span>--config<span class="w"> </span>configs/config.yml
+</code></pre></div>
+<hr />
+<h3 id="3-model-training">3. Model Training<a class="headerlink" href="#3-model-training" title="Permanent link">&para;</a></h3>
+<p>Train a model using a config file or command-line options. Supports LoRA, QLoRA, and full fine-tuning.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Config-based training</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span>--config<span class="w"> </span>configs/config.yml
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Or command-line training</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span>--model<span class="w"> </span>google/bert_uncased_L-2_H-128_A-2<span class="w"> </span>--dataset<span class="w"> </span>./data/train.csv<span class="w"> </span>--task<span class="w"> </span>text_classification<span class="w"> </span>--epochs<span class="w"> </span><span class="m">3</span><span class="w"> </span>--batch-size<span class="w"> </span><span class="m">8</span>
+</code></pre></div>
+<p><img alt="Training Architecture Diagram" src="images/training-arch-diag-new.png" /></p>
+<hr />
+<h3 id="4-model-evaluation">4. Model Evaluation<a class="headerlink" href="#4-model-evaluation" title="Permanent link">&para;</a></h3>
+<p>Evaluate your trained or downloaded models on standard or custom benchmarks.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>--model<span class="w"> </span>./fine-tuned-model<span class="w"> </span>--tasks<span class="w"> </span>hellaswag,arc_easy
+</code></pre></div>
+<p><img alt="Example: TensorBoard visualization of evaluation metrics" src="images/tensorboard.png" /></p>
+<hr />
+<h3 id="5-agent-workflows">5. Agent Workflows<a class="headerlink" href="#5-agent-workflows" title="Permanent link">&para;</a></h3>
+<p>Use intelligent agents for creative writing, research, social media, and more.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>generate_storybook<span class="w"> </span>--theme<span class="w"> </span><span class="s2">&quot;brave little mouse&quot;</span><span class="w"> </span>--target-age<span class="w"> </span><span class="s2">&quot;3-5&quot;</span>
+</code></pre></div>
+<p><img alt="IdeaWeaver Agent Architecture" src="images/agent.png" /></p>
+<hr />
+<h3 id="6-finetuning">6. Finetuning<a class="headerlink" href="#6-finetuning" title="Permanent link">&para;</a></h3>
+<p>Fine-tune models with LoRA, QLoRA, or full parameter updates for your data.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ideaweaver<span class="w"> </span>finetune<span class="w"> </span>lora<span class="w"> </span>--model<span class="w"> </span>microsoft/DialoGPT-medium<span class="w"> </span>--dataset<span class="w"> </span>./data.json<span class="w"> </span>--output-dir<span class="w"> </span>./fine-tuned-model
+</code></pre></div>
+<hr />
+<h3 id="7-rag-retrieval-augmented-generation">7. RAG (Retrieval-Augmented Generation)<a class="headerlink" href="#7-rag-retrieval-augmented-generation" title="Permanent link">&para;</a></h3>
+<p>Build and query knowledge bases with advanced retrieval and hybrid search.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>create-kb<span class="w"> </span>--name<span class="w"> </span>mykb
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>ingest<span class="w"> </span>--kb<span class="w"> </span>mykb<span class="w"> </span>--source<span class="w"> </span>./docs/
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>query<span class="w"> </span>--kb<span class="w"> </span>mykb<span class="w"> </span>--question<span class="w"> </span><span class="s2">&quot;What is RAG?&quot;</span>
+</code></pre></div>
+<hr />
+<h3 id="8-mcp-model-context-protocol-integration">8. MCP (Model Context Protocol) Integration<a class="headerlink" href="#8-mcp-model-context-protocol-integration" title="Permanent link">&para;</a></h3>
+<p>Connect to external tools and services (GitHub, AWS, etc.) for advanced workflows.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>list-servers
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>github
+</code></pre></div>
+<hr />
+<h2 id="architecture">🏗️ Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h3 id="system-overview">System Overview<a class="headerlink" href="#system-overview" title="Permanent link">&para;</a></h3>
+<p><img alt="Training Architecture Diagram" src="images/training-arch-diag-new.png" /></p>
+<h3 id="agent-architecture">Agent Architecture<a class="headerlink" href="#agent-architecture" title="Permanent link">&para;</a></h3>
+<p><img alt="IdeaWeaver Agent Architecture" src="images/agent.png" /></p>
+<p><em>Figure: Relationship between IdeaWeaver, CrewAI, and specialized generators.</em></p>
+<h3 id="rag-capabilities-comparison">RAG Capabilities Comparison<a class="headerlink" href="#rag-capabilities-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Traditional RAG</th>
+<th>Agentic RAG</th>
+<th>IdeaWeaver Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Query Processing</strong></td>
+<td>Direct retrieval</td>
+<td>Multi-step reasoning</td>
+<td>Both approaches supported</td>
+</tr>
+<tr>
+<td><strong>Context Awareness</strong></td>
+<td>Single-turn</td>
+<td>Multi-turn conversations</td>
+<td>Persistent context tracking</td>
+</tr>
+<tr>
+<td><strong>Tool Integration</strong></td>
+<td>Limited</td>
+<td>Extensive tool use</td>
+<td>MCP protocol integration</td>
+</tr>
+<tr>
+<td><strong>Self-Correction</strong></td>
+<td>None</td>
+<td>Built-in reflection</td>
+<td>Advanced error handling</td>
+</tr>
+<tr>
+<td><strong>Scalability</strong></td>
+<td>Vector search only</td>
+<td>Dynamic planning</td>
+<td>Hybrid approach</td>
+</tr>
+</tbody>
+</table>
+<h2 id="core-components">🔧 Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h2>
+<h3 id="model-training-fine-tuning">Model Training &amp; Fine-tuning<a class="headerlink" href="#model-training-fine-tuning" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>LoRA/QLoRA</strong>: Memory-efficient fine-tuning for large models</li>
+<li><strong>Full Parameter</strong>: Complete model retraining for maximum customization  </li>
+<li><strong>Multi-GPU</strong>: Distributed training support with automatic scaling</li>
+<li><strong>Experiment Tracking</strong>: MLflow, Weights &amp; Biases, Comet integration</li>
+</ul>
+<h4 id="fine-tuning-examples">Fine-tuning Examples<a class="headerlink" href="#fine-tuning-examples" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Full fine-tuning with DialoGPT</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>ideaweaver<span class="w"> </span>finetune<span class="w"> </span>full<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span>--model<span class="w"> </span>microsoft/DialoGPT-small<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span>--dataset<span class="w"> </span>datasets/instruction_following_sample.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span>--output-dir<span class="w"> </span>./test_full_basic<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span>--epochs<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span>--gradient-accumulation-steps<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">  </span>--learning-rate<span class="w"> </span>5e-5<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span>--max-seq-length<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">  </span>--gradient-checkpointing<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<p>Example output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>🚀 Supervised Fine-Tuner initialized
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>   Model: microsoft/DialoGPT-small
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>   Method: full
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>   Task: instruction_following
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>🔧 Setting up model and tokenizer...
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>✅ Model and tokenizer setup complete
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>   Model parameters: 124,439,808
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>📊 Preparing dataset from: datasets/instruction_following_sample.json
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>✅ Dataset prepared
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>   Training samples: 5
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>   Evaluation samples: 1
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>🔧 Setting up trainer...
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>✅ Trainer setup complete
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>🚀 Starting fine-tuning...
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>{&#39;loss&#39;: 26.2043, &#39;grad_norm&#39;: nan, &#39;learning_rate&#39;: 1.5076844803522922e-06, &#39;epoch&#39;: 5.0}
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>{&#39;train_runtime&#39;: 13.3988, &#39;train_samples_per_second&#39;: 1.866, &#39;train_steps_per_second&#39;: 0.746, &#39;train_loss&#39;: 26.204254150390625, &#39;epoch&#39;: 5.0}
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>✅ Fine-tuning completed!
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>📁 Model saved to: ./test_full_basic
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>📊 Evaluating model...
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>{&#39;eval_loss&#39;: nan, &#39;eval_runtime&#39;: 0.1933, &#39;eval_samples_per_second&#39;: 5.175, &#39;eval_steps_per_second&#39;: 5.175, &#39;epoch&#39;: 5.0}
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>✅ Evaluation complete
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>   eval_loss: nan
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>   eval_runtime: 0.1933
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>   eval_samples_per_second: 5.1750
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>   eval_steps_per_second: 5.1750
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>   epoch: 5.0000
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>✅ Full fine-tuning completed!
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>📁 Model saved to: ./test_full_basic
+</code></pre></div></p>
+<h4 id="listing-fine-tuned-models">Listing Fine-tuned Models<a class="headerlink" href="#listing-fine-tuned-models" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ideaweaver<span class="w"> </span>finetune<span class="w"> </span>list-models
+</code></pre></div>
+<p>Example output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>📁 Fine-tuned models found:
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>==================================================
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>📂 .
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>📂 cli-final-test
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>📂 cli-final-test/checkpoint-5
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>📂 comet-clean
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>📂 comet-clean/checkpoint-5
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>📂 comet-experiment
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>📂 comet-experiment/checkpoint-5
+</code></pre></div></p>
+<h3 id="rag-systems">RAG Systems<a class="headerlink" href="#rag-systems" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Vector Stores</strong>: Chroma, Qdrant, FAISS with automatic optimization</li>
+<li><strong>Embeddings</strong>: Sentence Transformers, OpenAI, custom models</li>
+<li><strong>Agentic RAG</strong>: Multi-step reasoning with tool integration</li>
+<li><strong>Document Processing</strong>: PDF, DOCX, TXT, Markdown with smart chunking</li>
+</ul>
+<h3 id="mcp-integration">MCP Integration<a class="headerlink" href="#mcp-integration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GitHub</strong>: Repository analysis, issue tracking, code reviews</li>
+<li><strong>AWS</strong>: S3, Lambda, SageMaker integration for cloud deployment</li>
+</ul>
+<h3 id="evaluation-benchmarking">Evaluation &amp; Benchmarking<a class="headerlink" href="#evaluation-benchmarking" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Standard Tasks</strong>: HellaSwag, ARC, WinoGrande, MMLU, and more</li>
+<li><strong>Custom Metrics</strong>: Domain-specific evaluation frameworks</li>
+<li><strong>Model Comparison</strong>: Side-by-side performance analysis</li>
+<li><strong>RAG Evaluation</strong>: RAGAS framework for retrieval assessment</li>
+</ul>
+<h2 id="example-workflows">📊 Example Workflows<a class="headerlink" href="#example-workflows" title="Permanent link">&para;</a></h2>
+<h3 id="complete-model-development-pipeline">Complete Model Development Pipeline<a class="headerlink" href="#complete-model-development-pipeline" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># 1. Setup and Data Preparation</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>init<span class="w"> </span>--vector-store<span class="w"> </span>chroma
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>add-documents<span class="w"> </span>--path<span class="w"> </span>./training-docs/
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># 2. Generate Training Data</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>query<span class="w"> </span><span class="s2">&quot;Generate training examples for customer service&quot;</span><span class="w"> </span>--save-context
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1"># 3. Model Fine-tuning  </span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>ideaweaver<span class="w"> </span>finetune<span class="w"> </span>lora<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span>--model<span class="w"> </span>microsoft/DialoGPT-medium<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">    </span>--dataset<span class="w"> </span>./generated-training-data<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">    </span>--output-dir<span class="w"> </span>./fine-tuned-model
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="c1"># 4. Evaluation &amp; Comparison</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">    </span>--model<span class="w"> </span>./fine-tuned-model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="w">    </span>--tasks<span class="w"> </span>hellaswag,arc_easy,custom-eval<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">    </span>--output<span class="w"> </span>evaluation-results.json
+</code></pre></div>
+<h3 id="multi-agent-content-generation">Multi-Agent Content Generation<a class="headerlink" href="#multi-agent-content-generation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Setup CrewAI workflow</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>generate-storybook<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span>--topic<span class="w"> </span><span class="s2">&quot;AI model training best practices&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span>--agents<span class="w"> </span>researcher,writer,reviewer<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span>--output<span class="w"> </span>training-guide.md
+</code></pre></div>
+<h2 id="enterprise-features">🌟 Enterprise Features<a class="headerlink" href="#enterprise-features" title="Permanent link">&para;</a></h2>
+<h2 id="performance-benchmarks">📈 Performance Benchmarks<a class="headerlink" href="#performance-benchmarks" title="Permanent link">&para;</a></h2>
+<h3 id="training-speed-improvements">Training Speed Improvements<a class="headerlink" href="#training-speed-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>LoRA Fine-tuning</strong>: 3-5x faster than full parameter training</li>
+<li><strong>QLoRA</strong>: 50% memory reduction with minimal quality loss</li>
+</ul>
+<h3 id="rag-system-performance">RAG System Performance<a class="headerlink" href="#rag-system-performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Query Speed</strong>: &lt;200ms average response time</li>
+<li><strong>Accuracy</strong>: 15-25% improvement over baseline RAG</li>
+<li><strong>Scalability</strong>: Handles 10M+ documents efficiently</li>
+</ul>
+<h2 id="getting-started">🚀 Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong><a href="getting-started/installation/">Installation Guide</a></strong> - Setup in under 5 minutes</li>
+<li><strong><a href="getting-started/quick-start/">Quick Start</a></strong> - Your first model in 15 minutes  </li>
+<li><strong><a href="getting-started/configuration/">Configuration</a></strong> - Customize for your needs</li>
+<li><strong><a href="reference/cli-commands/">CLI Reference</a></strong> - Complete command documentation</li>
+</ol>
+<h2 id="documentation">📚 Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<h3 id="getting-started_1">Getting Started<a class="headerlink" href="#getting-started_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="getting-started/installation/">Installation</a> - Complete setup guide</li>
+<li><a href="getting-started/quick-start/">Quick Start</a> - Essential commands and workflows</li>
+<li><a href="getting-started/configuration/">Configuration</a> - Customize your setup</li>
+</ul>
+<h3 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="tutorials/model-training.md">Model Training</a> - LoRA, QLoRA, and full fine-tuning</li>
+<li><a href="tutorials/rag-systems.md">RAG Systems</a> - Build intelligent retrieval systems</li>
+<li><a href="tutorials/mcp-integration.md">MCP Integration</a> - Connect external services</li>
+</ul>
+<h3 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="reference/cli-commands/">CLI Commands</a> - Complete command reference</li>
+<li><a href="reference/configuration.md">Configuration Files</a> - YAML configuration guide</li>
+</ul>
+<h3 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="guides/enterprise-rag.md">Enterprise RAG</a> - Production RAG deployments</li>
+<li><a href="guides/fine-tuning.md">Fine-tuning Best Practices</a> - Advanced training techniques</li>
+</ul>
+<h2 id="community">🤝 Community<a class="headerlink" href="#community" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="community/contributing/">Contributing</a></strong> - Join our development community</li>
+<li><strong><a href="community/guidelines.md">Guidelines</a></strong> - Code standards and best practices  </li>
+<li><strong><a href="community/support/">Support</a></strong> - Get help and report issues</li>
+<li><strong><a href="community/roadmap.md">Roadmap</a></strong> - Upcoming features and improvements</li>
+</ul>
+<h2 id="license">📄 License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<h2 id="cli-usage-examples">CLI Usage Examples<a class="headerlink" href="#cli-usage-examples" title="Permanent link">&para;</a></h2>
+<h3 id="model-training">Model Training<a class="headerlink" href="#model-training" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Config-based training</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span>--config<span class="w"> </span>configs/config.yml<span class="w"> </span>--verbose
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Command line training</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span>--model<span class="w"> </span>google/bert_uncased_L-2_H-128_A-2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">    </span>--dataset<span class="w"> </span>./data/train.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">    </span>--task<span class="w"> </span>text_classification<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">    </span>--epochs<span class="w"> </span><span class="m">3</span><span class="w"> </span>--batch-size<span class="w"> </span><span class="m">8</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1"># AWS Bedrock deployment training</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span>--model<span class="w"> </span>meta-llama/Llama-2-7b-hf<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">    </span>--dataset<span class="w"> </span>./data/train.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span>--push-to-bedrock<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="w">    </span>--bedrock-model-name<span class="w"> </span>my-llama-model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="w">    </span>--bedrock-s3-bucket<span class="w"> </span>my-bedrock-bucket<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">    </span>--bedrock-role-arn<span class="w"> </span>arn:aws:iam::123456789012:role/BedrockImportRole
+</code></pre></div>
+<h4 id="tensorboard-ui-example">TensorBoard UI Example<a class="headerlink" href="#tensorboard-ui-example" title="Permanent link">&para;</a></h4>
+<p><img alt="Example: TensorBoard visualization of evaluation metrics" src="images/tensorboard.png" /></p>
+<h4 id="weights-biases-wandb-online-example">Weights &amp; Biases (wandb) Online Example<a class="headerlink" href="#weights-biases-wandb-online-example" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">WANDB_MODE</span><span class="o">=</span>online<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>XXXXXX<span class="w"> </span>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./my-qwen2-model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">  </span>--output-path<span class="w"> </span>./evaluation_results_wandb<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">  </span>--generate-report<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">  </span>--report-to<span class="w"> </span>wandb<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span>--wandb-project<span class="w"> </span>my-eval-project<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<p>Example output:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>🚀 Starting LLM evaluation for model: ./my-qwen2-model
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>📊 Tracking with: wandb
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>✅ Local model found: ./my-qwen2-model
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>wandb: Currently logged in as: laprashant (laprashant-startup) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>wandb: Tracking run with wandb version 0.19.11
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>wandb: Run data is saved locally in /Users/plakhera/Documents/model-registry/wandb/run-20250605_201404-irki0njw
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>wandb: Run `wandb offline` to turn off syncing.
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>wandb: Syncing run autumn-shadow-1
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>wandb: ⭐️ View project at https://wandb.ai/laprashant-startup/my-eval-project
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>wandb: 🚀 View run at https://wandb.ai/laprashant-startup/my-eval-project/runs/irki0njw
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>✅ Wandb initialized: https://wandb.ai/laprashant-startup/my-eval-project/runs/irki0njw
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>📊 Starting evaluation on tasks: hellaswag, arc_easy
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>📁 Output path: ./evaluation_results_wandb
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>🔧 Running command: lm_eval --model hf --model_args pretrained=./my-qwen2-model --tasks hellaswag,arc_easy --device auto --batch_size 2 --output_path ./evaluation_results_wandb --log_samples --limit 2 --wandb_args project=my-eval-project
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>✅ Evaluation completed in 117.12 seconds
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>📋 Evaluation output:
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>hf (pretrained=./my-qwen2-model), gen_kwargs: (None), limit: 2.0, num_fewshot: None, batch_size: 2
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>|  Tasks  |Version|Filter|n-shot| Metric |   |Value|   |Stderr|
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>|---------|------:|------|-----:|--------|---|----:|---|-----:|
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>|arc_easy |      1|none  |     0|acc     |↑  |    0|±  |     0|
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>|         |       |none  |     0|acc_norm|↑  |    1|±  |     0|
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>|hellaswag|      1|none  |     0|acc     |↑  |    0|±  |     0|
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>|         |       |none  |     0|acc_norm|↑  |    0|±  |     0|
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>⚠️  No results.json found, creating basic results structure
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>✅ Results logged to Weights &amp; Biases
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>✅ Evaluation completed successfully!
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>📄 Evaluation report saved to: evaluation_report_._my-qwen2-model.md
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>📄 Report saved to: evaluation_report_._my-qwen2-model.md
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>📊 Evaluation Summary:
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>   dummy_task - dummy_metric: 1.0000
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>wandb: 
+<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>wandb: Run history:
+<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>wandb: dummy_task_dummy_metric ▁
+<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>wandb:     evaluation_duration ▁
+<a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a>wandb:               num_tasks ▁
+<a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a>wandb: 
+<a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a>wandb: Run summary:
+<a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a>wandb: dummy_task_dummy_metric 1
+<a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a>wandb:     evaluation_duration 117.1197
+<a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a>wandb:               num_tasks 2
+<a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a>wandb: 
+<a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>wandb: 🚀 View run autumn-shadow-1 at: https://wandb.ai/laprashant-startup/my-eval-project/runs/irki0njw
+<a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a>wandb: ⭐️ View project at: https://wandb.ai/laprashant-startup/my-eval-project
+<a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a>wandb: Synced 5 W&amp;B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
+<a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a>wandb: Find logs at: ./wandb/run-20250605_201404-irki0njw/logs
+<a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a>✅ Wandb run finished
+<a id="__codelineno-21-49" name="__codelineno-21-49" href="#__codelineno-21-49"></a>/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/tempfile.py:940: ResourceWarning: Implicitly cleaning up &lt;TemporaryDirectory &#39;/var/folders/zh/6p21kgbs2p192mpqm1csfd3r0000gn/T/tmpr6z8m8xf&#39;&gt;
+<a id="__codelineno-21-50" name="__codelineno-21-50" href="#__codelineno-21-50"></a>  _warnings.warn(warn_message, ResourceWarning)
+</code></pre></div></p>
+<h4 id="wandb-ui-example">wandb UI Example<a class="headerlink" href="#wandb-ui-example" title="Permanent link">&para;</a></h4>
+<p><img alt="Example: wandb visualization of evaluation metrics" src="images/wandb.png" /></p>
+<p>The evaluation command provides comprehensive model assessment with:
+- Integration with TensorBoard for visualization
+- Weights &amp; Biases (wandb) tracking
+- Detailed performance metrics for each task
+- Automatic report generation
+- Offline and online logging options</p>
+<p>For more details on evaluation options and available tasks, see the <a href="tutorials/evaluation.md">Evaluation Guide</a>.</p>
+<h3 id="agent-commands">Agent Commands<a class="headerlink" href="#agent-commands" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Check LLM status</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>check-llm
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Storybook generation</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>generate_storybook<span class="w"> </span>--theme<span class="w"> </span><span class="s2">&quot;brave little mouse&quot;</span><span class="w"> </span>--target-age<span class="w"> </span><span class="s2">&quot;3-5&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="c1"># Research and writing</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>research_write<span class="w"> </span>--topic<span class="w"> </span><span class="s2">&quot;AI in healthcare&quot;</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="c1"># LinkedIn post creation</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>linkedin_post<span class="w"> </span>--topic<span class="w"> </span><span class="s2">&quot;AI trends in 2025&quot;</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="c1"># Travel planning</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>travel_plan<span class="w"> </span>--destination<span class="w"> </span><span class="s2">&quot;Tokyo&quot;</span><span class="w"> </span>--duration<span class="w"> </span><span class="s2">&quot;7 days&quot;</span><span class="w"> </span>--budget<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$2000</span><span class="s2">-3000&quot;</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="c1"># Stock analysis</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>stock_analysis<span class="w"> </span>--symbol<span class="w"> </span>AAPL
+</code></pre></div>
+<p>Example output for check-llm:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>🔍 Checking for Ollama availability...
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>✅ Ollama is available! Using model: phi3:mini
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>📋 Available models: deepseek-r1:1.5b, phi3:mini
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>✅ Created CrewAI LLM wrapper successfully
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>✅ LLM Status:
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>   Provider: ollama
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>   Model: phi3:mini
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>   Status: Connected and ready
+</code></pre></div></p>
+<h2 id="mlflow-model-registration-example">MLflow Model Registration Example<a class="headerlink" href="#mlflow-model-registration-example" title="Permanent link">&para;</a></h2>
+<p>To track experiments and register models with MLflow, follow these steps:</p>
+<hr />
+<h3 id="ideaweaver-model-registry-integrations">IdeaWeaver Model Registry Integrations<a class="headerlink" href="#ideaweaver-model-registry-integrations" title="Permanent link">&para;</a></h3>
+<p><img alt="IdeaWeaver Registry Support" src="images/registry-support.png" /></p>
+<hr />
+<h3 id="1-start-the-mlflow-server">1. Start the MLflow server<a class="headerlink" href="#1-start-the-mlflow-server" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>mlflow<span class="w"> </span>server<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">5000</span><span class="w"> </span>--backend-store-uri<span class="w"> </span>sqlite:///mlflow.db
+</code></pre></div>
+<h3 id="2-train-and-register-a-model">2. Train and register a model<a class="headerlink" href="#2-train-and-register-a-model" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span>--model<span class="w"> </span>bert-base-uncased<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span>--dataset<span class="w"> </span>./datasets/training_data.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">  </span>--track-experiments<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span>--mlflow-uri<span class="w"> </span>http://127.0.0.1:5000<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span>--mlflow-experiment<span class="w"> </span><span class="s2">&quot;MyExperiment&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">  </span>--register-model
+</code></pre></div>
+<h4 id="example-output">Example Output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>🤗 Using model: bert-base-uncased
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>📊 Experiment tracking enabled
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>🏷️  Model registration enabled
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>🚀 Starting model training...
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>2025/06/05 11:08:39 INFO mlflow.tracking.fluent: Experiment with name &#39;MyExperiment&#39; does not exist. Creating a new experiment.
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>...
+</code></pre></div>
+<h4 id="mlflow-ui-example">MLflow UI Example<a class="headerlink" href="#mlflow-ui-example" title="Permanent link">&para;</a></h4>
+<p><img alt="MLflow UI Example" src="images/mlflow_ui_example.png" /></p>
+<p>You can view your run and registered model in the MLflow UI at <a href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>.</p>
+<h2 id="pushing-a-model-to-hugging-face-hub">Pushing a Model to Hugging Face Hub<a class="headerlink" href="#pushing-a-model-to-hugging-face-hub" title="Permanent link">&para;</a></h2>
+<p>To push a small model to Hugging Face for testing, use a tiny model like <code>sshleifer/tiny-distilbert-base-cased</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">  </span>--model<span class="w"> </span>sshleifer/tiny-distilbert-base-cased<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">  </span>--dataset<span class="w"> </span>./datasets/training_data.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span>--push-to-hub<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">  </span>--hub-model-id<span class="w"> </span>&lt;your-username&gt;/&lt;your-model-name&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">  </span>--hf-token<span class="w"> </span>&lt;your-hf-token&gt;
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;your-username&gt;/&lt;your-model-name&gt;</code> with your Hugging Face username and desired model name.</li>
+<li>Replace <code>&lt;your-hf-token&gt;</code> with your Hugging Face access token.</li>
+<li>For instructions on creating a token, see the <a href="https://huggingface.co/docs/hub/en/security-tokens">Hugging Face token documentation</a>.</li>
+</ul>
+<h4 id="example-output_1">Example Output<a class="headerlink" href="#example-output_1" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>🤗 Using model: sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>🚀 Will push to Hub: &lt;your-username&gt;/&lt;your-model-name&gt;
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>🚀 Starting model training...
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>README.md: 100%|██████████████████████████████████████████████████████████████████████████| 5.17k/5.17k [00:00&lt;00:00, 5.19MB/s]
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>model.safetensors: 100%|████████████████████████████████████████████████████████████████████| 438M/438M [00:41&lt;00:00, 10.5MB/s]
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>✅ Model successfully pushed to: https://huggingface.co/&lt;your-username&gt;/&lt;your-model-name&gt;
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>============================================================
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>🎉 TRAINING SUMMARY
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>============================================================
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>📂 Model Path:           ./my-model
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>🤖 Base Model:           sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>📊 Dataset:              ./autotrain_projects/my-model
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>📊 KEY PERFORMANCE METRICS
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>----------------------------------------
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>📉 Final Train Loss:     1.0997
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>🎯 Overall Accuracy:     40.0%
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>============================================================
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>✨ Training completed successfully! Model is ready for use.
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>============================================================
+<a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>✅ Training completed successfully!
+<a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>📁 Model saved to: ./my-model
+<a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>📤 Pushing to Hugging Face Hub...
+</code></pre></div>
+<h4 id="hugging-face-ui-example">Hugging Face UI Example<a class="headerlink" href="#hugging-face-ui-example" title="Permanent link">&para;</a></h4>
+<p><img alt="Hugging Face Model Example" src="images/hugging_face.png" /></p>
+<h2 id="pushing-a-model-to-dagshub">Pushing a Model to DagsHub<a class="headerlink" href="#pushing-a-model-to-dagshub" title="Permanent link">&para;</a></h2>
+<p>To push a small model to DagsHub for testing, use a tiny model like <code>sshleifer/tiny-distilbert-base-cased</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span>--model<span class="w"> </span>sshleifer/tiny-distilbert-base-cased<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">  </span>--dataset<span class="w"> </span>./datasets/training_data.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">  </span>--mlflow-uri<span class="w"> </span>https://dagshub.com/&lt;your-username&gt;/&lt;your-repo&gt;.mlflow<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">  </span>--dagshub-token<span class="w"> </span>&lt;your-dagshub-token&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">  </span>--dagshub-repo-owner<span class="w"> </span>&lt;your-username&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">  </span>--dagshub-repo-name<span class="w"> </span>&lt;your-repo&gt;
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;your-username&gt;</code>, <code>&lt;your-repo&gt;</code>, and <code>&lt;your-dagshub-token&gt;</code> with your DagsHub details.</li>
+<li><strong>Create an access token in the <a href="https://dagshub.com/user/settings/tokens">tokens settings menu</a>.</strong></li>
+<li>Models logged with MLflow will appear in the DagsHub UI under "Experiments" and "Models" automatically.</li>
+<li>For more info, see <a href="https://dagshub.com/">DagsHub</a>.</li>
+</ul>
+<h4 id="example-output_2">Example Output<a class="headerlink" href="#example-output_2" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>🤗 Using model: sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>🚀 Starting model training...
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>============================================================
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>🎉 TRAINING SUMMARY
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>============================================================
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>📂 Model Path:           ./my-model
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>🤖 Base Model:           sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>📊 Dataset:              ./autotrain_projects/my-model
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>📊 KEY PERFORMANCE METRICS
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>----------------------------------------
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>📉 Final Train Loss:     1.0986
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>🎯 Overall Accuracy:     20.0%
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>============================================================
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>✨ Training completed successfully! Model is ready for use.
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>============================================================
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>✅ Training completed successfully!
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>📁 Model saved to: ./my-model
+</code></pre></div>
+<hr />
+<h3 id="dagshub-ui-example">DagsHub UI Example<a class="headerlink" href="#dagshub-ui-example" title="Permanent link">&para;</a></h3>
+<p>Once your model is registered, you can view it in the DagsHub Model Registry UI:</p>
+<p><img alt="DagsHub Model Registry Screenshot" src="images/dagshub_repo.png" /></p>
+<p>You will see your registered models listed, as shown above.</p>
+<hr />
+<h3 id="comet-model-registry-example">Comet Model Registry Example<a class="headerlink" href="#comet-model-registry-example" title="Permanent link">&para;</a></h3>
+<p>You can use Comet to track experiments and register models directly from IdeaWeaver.</p>
+<h4 id="training-and-registering-a-model-with-comet">Training and Registering a Model with Comet<a class="headerlink" href="#training-and-registering-a-model-with-comet" title="Permanent link">&para;</a></h4>
+<p>First, activate your environment:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+</code></pre></div>
+<p>Then run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span>--model<span class="w"> </span>sshleifer/tiny-distilbert-base-cased<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span>--dataset<span class="w"> </span>./datasets/training_data.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="w">  </span>--comet-api-key<span class="w"> </span>&lt;your-comet-api-key&gt;<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="w">  </span>--comet-project<span class="w"> </span>my-model-project<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="w">  </span>--track-experiments<span class="w"> </span>--register-model
+</code></pre></div>
+<ul>
+<li>Replace the API key and project name as needed.</li>
+</ul>
+<h4 id="example-output_3">Example Output<a class="headerlink" href="#example-output_3" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>🤗<span class="w"> </span>Using<span class="w"> </span>model:<span class="w"> </span>sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>📊<span class="w"> </span>Experiment<span class="w"> </span>tracking<span class="w"> </span>enabled
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>🏷️<span class="w">  </span>Model<span class="w"> </span>registration<span class="w"> </span>enabled<span class="w"> </span><span class="o">(</span>MLflow/DagsHub/Comet<span class="o">)</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>🚀<span class="w"> </span>Starting<span class="w"> </span>model<span class="w"> </span>training...
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>Experiment<span class="w"> </span>is<span class="w"> </span>live<span class="w"> </span>on<span class="w"> </span>comet.com<span class="w"> </span>https://www.comet.com/prashant-lakhera/my-model-project/4ea3ce89906d4067abbfe81c4e924a6b
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>🏷️<span class="w">  </span>Model<span class="w"> </span>registered<span class="w"> </span><span class="k">in</span><span class="w"> </span>Model<span class="w"> </span>Registry:<span class="w"> </span>ideaweaver-my-model
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>🤖<span class="w"> </span>Model<span class="w"> </span>pushed<span class="w"> </span>to<span class="w"> </span>Comet<span class="w"> </span>ML
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>Successfully<span class="w"> </span>registered<span class="w"> </span>model<span class="w"> </span><span class="s1">&#39;ideaweaver-my-model&#39;</span>.
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>Created<span class="w"> </span>version<span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="w"> </span>of<span class="w"> </span>model<span class="w"> </span><span class="s1">&#39;ideaweaver-my-model&#39;</span>.
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>🏷️<span class="w">  </span>Model<span class="w"> </span>registered<span class="w"> </span><span class="k">in</span><span class="w"> </span>Model<span class="w"> </span>Registry:<span class="w"> </span>ideaweaver-my-model
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>
+<a id="__codelineno-33-12" name="__codelineno-33-12" href="#__codelineno-33-12"></a><span class="o">============================================================</span>
+<a id="__codelineno-33-13" name="__codelineno-33-13" href="#__codelineno-33-13"></a>🎉<span class="w"> </span>TRAINING<span class="w"> </span><span class="nv">SUMMARY</span>
+<a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="o">============================================================</span>
+<a id="__codelineno-33-15" name="__codelineno-33-15" href="#__codelineno-33-15"></a>📂<span class="w"> </span>Model<span class="w"> </span>Path:<span class="w">           </span>./my-model
+<a id="__codelineno-33-16" name="__codelineno-33-16" href="#__codelineno-33-16"></a>🤖<span class="w"> </span>Base<span class="w"> </span>Model:<span class="w">           </span>sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-33-17" name="__codelineno-33-17" href="#__codelineno-33-17"></a>📊<span class="w"> </span>Dataset:<span class="w">              </span>./autotrain_projects/my-model
+<a id="__codelineno-33-18" name="__codelineno-33-18" href="#__codelineno-33-18"></a>
+<a id="__codelineno-33-19" name="__codelineno-33-19" href="#__codelineno-33-19"></a>📊<span class="w"> </span>KEY<span class="w"> </span>PERFORMANCE<span class="w"> </span>METRICS
+<a id="__codelineno-33-20" name="__codelineno-33-20" href="#__codelineno-33-20"></a>----------------------------------------
+<a id="__codelineno-33-21" name="__codelineno-33-21" href="#__codelineno-33-21"></a>📉<span class="w"> </span>Final<span class="w"> </span>Train<span class="w"> </span>Loss:<span class="w">     </span><span class="m">1</span>.0986
+<a id="__codelineno-33-22" name="__codelineno-33-22" href="#__codelineno-33-22"></a>🎯<span class="w"> </span>Overall<span class="w"> </span>Accuracy:<span class="w">     </span><span class="m">40</span>.0%
+<a id="__codelineno-33-23" name="__codelineno-33-23" href="#__codelineno-33-23"></a>
+<a id="__codelineno-33-24" name="__codelineno-33-24" href="#__codelineno-33-24"></a><span class="o">============================================================</span>
+<a id="__codelineno-33-25" name="__codelineno-33-25" href="#__codelineno-33-25"></a>✨<span class="w"> </span>Training<span class="w"> </span>completed<span class="w"> </span>successfully!<span class="w"> </span>Model<span class="w"> </span>is<span class="w"> </span>ready<span class="w"> </span><span class="k">for</span><span class="w"> </span>use.
+<a id="__codelineno-33-26" name="__codelineno-33-26" href="#__codelineno-33-26"></a><span class="o">============================================================</span>
+<a id="__codelineno-33-27" name="__codelineno-33-27" href="#__codelineno-33-27"></a>
+<a id="__codelineno-33-28" name="__codelineno-33-28" href="#__codelineno-33-28"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>---------------------------------------------------------------------------------------
+<a id="__codelineno-33-29" name="__codelineno-33-29" href="#__codelineno-33-29"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>Comet.ml<span class="w"> </span>Experiment<span class="w"> </span>Summary
+<a id="__codelineno-33-30" name="__codelineno-33-30" href="#__codelineno-33-30"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>---------------------------------------------------------------------------------------
+<a id="__codelineno-33-31" name="__codelineno-33-31" href="#__codelineno-33-31"></a>COMET<span class="w"> </span>INFO:<span class="w">   </span>Data:
+<a id="__codelineno-33-32" name="__codelineno-33-32" href="#__codelineno-33-32"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>display_summary_level<span class="w"> </span>:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-33-33" name="__codelineno-33-33" href="#__codelineno-33-33"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>name<span class="w">                  </span>:<span class="w"> </span>ideaweaver-my-model
+<a id="__codelineno-33-34" name="__codelineno-33-34" href="#__codelineno-33-34"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>url<span class="w">                   </span>:<span class="w"> </span>https://www.comet.com/prashant-lakhera/my-model-project/4ea3ce89906d4067abbfe81c4e924a6b
+<a id="__codelineno-33-35" name="__codelineno-33-35" href="#__codelineno-33-35"></a>COMET<span class="w"> </span>INFO:<span class="w">   </span>Metrics:
+<a id="__codelineno-33-36" name="__codelineno-33-36" href="#__codelineno-33-36"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>eval_f1_macro<span class="w">            </span>:<span class="w"> </span><span class="m">0</span>.19047619047619047
+<a id="__codelineno-33-37" name="__codelineno-33-37" href="#__codelineno-33-37"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>eval_loss<span class="w">                </span>:<span class="w"> </span><span class="m">1</span>.098659634590149
+<a id="__codelineno-33-38" name="__codelineno-33-38" href="#__codelineno-33-38"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>final_train_loss<span class="w">         </span>:<span class="w"> </span><span class="m">1</span>.0986
+<a id="__codelineno-33-39" name="__codelineno-33-39" href="#__codelineno-33-39"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>overall_accuracy<span class="w">         </span>:<span class="w"> </span><span class="m">0</span>.4
+<a id="__codelineno-33-40" name="__codelineno-33-40" href="#__codelineno-33-40"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>train_runtime<span class="w">            </span>:<span class="w"> </span><span class="m">2</span>.6494
+<a id="__codelineno-33-41" name="__codelineno-33-41" href="#__codelineno-33-41"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>train_samples_per_second<span class="w"> </span>:<span class="w"> </span><span class="m">21</span>.515
+<a id="__codelineno-33-42" name="__codelineno-33-42" href="#__codelineno-33-42"></a>COMET<span class="w"> </span>INFO:<span class="w">   </span>Others:
+<a id="__codelineno-33-43" name="__codelineno-33-43" href="#__codelineno-33-43"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>Name<span class="w"> </span>:<span class="w"> </span>ideaweaver-my-model
+<a id="__codelineno-33-44" name="__codelineno-33-44" href="#__codelineno-33-44"></a>COMET<span class="w"> </span>INFO:<span class="w">   </span>Parameters:
+<a id="__codelineno-33-45" name="__codelineno-33-45" href="#__codelineno-33-45"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>base_model<span class="w">     </span>:<span class="w"> </span>sshleifer/tiny-distilbert-base-cased
+<a id="__codelineno-33-46" name="__codelineno-33-46" href="#__codelineno-33-46"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>batch_size<span class="w">     </span>:<span class="w"> </span><span class="m">8</span>
+<a id="__codelineno-33-47" name="__codelineno-33-47" href="#__codelineno-33-47"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>epochs<span class="w">         </span>:<span class="w"> </span><span class="m">3</span>
+<a id="__codelineno-33-48" name="__codelineno-33-48" href="#__codelineno-33-48"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>learning_rate<span class="w">  </span>:<span class="w"> </span>2e-05
+<a id="__codelineno-33-49" name="__codelineno-33-49" href="#__codelineno-33-49"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>max_seq_length<span class="w"> </span>:<span class="w"> </span><span class="m">128</span>
+<a id="__codelineno-33-50" name="__codelineno-33-50" href="#__codelineno-33-50"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>task<span class="w">           </span>:<span class="w"> </span>text_classification
+<a id="__codelineno-33-51" name="__codelineno-33-51" href="#__codelineno-33-51"></a>COMET<span class="w"> </span>INFO:<span class="w">   </span>Uploads:
+<a id="__codelineno-33-52" name="__codelineno-33-52" href="#__codelineno-33-52"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>asset<span class="w">               </span>:<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">(</span><span class="m">1</span>.07<span class="w"> </span>MB<span class="o">)</span>
+<a id="__codelineno-33-53" name="__codelineno-33-53" href="#__codelineno-33-53"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>environment<span class="w"> </span>details<span class="w"> </span>:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-33-54" name="__codelineno-33-54" href="#__codelineno-33-54"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>filename<span class="w">            </span>:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-33-55" name="__codelineno-33-55" href="#__codelineno-33-55"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>installed<span class="w"> </span>packages<span class="w">  </span>:<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-33-56" name="__codelineno-33-56" href="#__codelineno-33-56"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>model-element<span class="w">       </span>:<span class="w"> </span><span class="m">67</span><span class="w"> </span><span class="o">(</span><span class="m">2</span>.02<span class="w"> </span>MB<span class="o">)</span>
+<a id="__codelineno-33-57" name="__codelineno-33-57" href="#__codelineno-33-57"></a>COMET<span class="w"> </span>INFO:<span class="w">     </span>source_code<span class="w">         </span>:<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="o">(</span><span class="m">41</span>.60<span class="w"> </span>KB<span class="o">)</span>
+<a id="__codelineno-33-58" name="__codelineno-33-58" href="#__codelineno-33-58"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>
+<a id="__codelineno-33-59" name="__codelineno-33-59" href="#__codelineno-33-59"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>Successfully<span class="w"> </span>registered<span class="w"> </span><span class="s1">&#39;ideaweaver-my-model&#39;</span>,<span class="w"> </span>version<span class="w"> </span><span class="s1">&#39;1.0.0&#39;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span>workspace<span class="w"> </span><span class="s1">&#39;prashant-lakhera&#39;</span>
+<a id="__codelineno-33-60" name="__codelineno-33-60" href="#__codelineno-33-60"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>Please<span class="w"> </span><span class="nb">wait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>assets<span class="w"> </span>to<span class="w"> </span>finish<span class="w"> </span>uploading<span class="w"> </span><span class="o">(</span>timeout<span class="w"> </span>is<span class="w"> </span><span class="m">10800</span><span class="w"> </span>seconds<span class="o">)</span>
+<a id="__codelineno-33-61" name="__codelineno-33-61" href="#__codelineno-33-61"></a>COMET<span class="w"> </span>INFO:<span class="w"> </span>Still<span class="w"> </span>uploading<span class="w"> </span><span class="m">52</span><span class="w"> </span>file<span class="o">(</span>s<span class="o">)</span>,<span class="w"> </span>remaining<span class="w"> </span><span class="m">1</span>.14<span class="w"> </span>MB/1.27<span class="w"> </span>MB
+<a id="__codelineno-33-62" name="__codelineno-33-62" href="#__codelineno-33-62"></a>✅<span class="w"> </span>Training<span class="w"> </span>completed<span class="w"> </span>successfully!
+<a id="__codelineno-33-63" name="__codelineno-33-63" href="#__codelineno-33-63"></a>📁<span class="w"> </span>Model<span class="w"> </span>saved<span class="w"> </span>to:<span class="w"> </span>./my-model
+</code></pre></div>
+<h4 id="comet-ui-example">Comet UI Example<a class="headerlink" href="#comet-ui-example" title="Permanent link">&para;</a></h4>
+<p>Once your model is registered, you can view it in the Comet Model Registry UI:</p>
+<p><img alt="Comet Model Registry Screenshot" src="images/comet_project.png" /></p>
+<p>You will see your registered models listed, as shown above.</p>
+<ul>
+<li><a href="https://www.comet.com/docs/v2/model-registry/">Comet Model Registry Documentation</a></li>
+<li><strong>Create an API keys <a href="https://www.comet.com/account-settings/apiKeys">API keys</a></strong></li>
+</ul>
+<p><strong>Ready to transform your AI workflow?</strong> <a href="getting-started/installation/">Get started now</a> or <a href="community/contributing/">join our community</a>! 🚀 </p>
+<h2 id="aws-bedrock-bring-your-own-model-byom-deployment">AWS Bedrock Bring-Your-Own-Model (BYOM) Deployment<a class="headerlink" href="#aws-bedrock-bring-your-own-model-byom-deployment" title="Permanent link">&para;</a></h2>
+<p>Below are the <strong>must-haves before Amazon Bedrock will accept a "bring-your-own-model" (Custom Model Import) job.</strong></p>
+<h3 id="1-prepare-the-model-artifacts">1. Prepare the model artifacts<a class="headerlink" href="#1-prepare-the-model-artifacts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supported architecture</strong>: Llama 2 / 3 family, Mistral, Mixtral, Flan-T5, GPT-BigCode, Qwen 2(+ VL/2.5)</td>
+<td>Bedrock recognises only these model configs at import time. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>Weights ≤ 200 GB for text, ≤ 100 GB for multimodal</strong></td>
+<td>Larger checkpoints are rejected. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>Hugging Face format, stored in S3</strong><br> * <code>.safetensors</code> weights (FP32, FP16 or BF16 only; <strong>no quantised</strong> weights)<br> * <code>config.json</code><br> * <code>tokenizer.json / tokenizer.model / tokenizer_config.json</code></td>
+<td>Bedrock's import job reads these exact filenames. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>Transformers 4.45.2</strong> used when you fine-tune or convert the model</td>
+<td>The import job validates the version tag in <code>config.json</code>. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>Context length &lt; 128 k tokens</strong></td>
+<td>Upper bound enforced at import. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>Licence compliance</strong></td>
+<td>You must have the rights to run the model in Bedrock. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-set-up-inside-aws">2. Set-up inside AWS<a class="headerlink" href="#2-set-up-inside-aws" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supported Regions</strong></td>
+<td><code>us-east-1</code>, <code>us-west-2</code>, <code>eu-central-1</code> for import &amp; inference today. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html" title="Import a customized model into Amazon Bedrock - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>S3 bucket</strong> in the same Region</td>
+<td>Upload the HF files; if the bucket or its KMS key is in another account, grant Bedrock <code>GetObject / ListBucket</code> and decrypt permissions. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-import-prereq.html" title="Prerequisites for importing custom model - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>IAM service role</strong> (or let the console create one) with: <br>• <code>sts:AssumeRole</code> trust for <code>bedrock.amazonaws.com</code><br>• Minimal <code>s3:GetObject</code>, <code>s3:ListBucket</code> on your model path</td>
+<td>Bedrock assumes this role during the import job. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html" title="Create a service role for model import - Amazon Bedrock">docs.aws.amazon.com</a>)</td>
+</tr>
+<tr>
+<td><strong>Bedrock permissions for the user/CI role running the import</strong></td>
+<td><code>bedrock:CreateModelImportJob</code>, <code>bedrock:GetModelImportJob</code>, <code>bedrock:ListImportedModels</code>, etc.</td>
+</tr>
+<tr>
+<td><strong>Provisioned or On-Demand throughput</strong></td>
+<td>After import you still need throughput capacity before you can call <code>InvokeModel</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-optional-but-recommended-security-network-controls">3. (Optional but recommended) security &amp; network controls<a class="headerlink" href="#3-optional-but-recommended-security-network-controls" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>KMS encryption</strong> for the S3 objects and for the model once stored in Bedrock. Bedrock can use your CMK if you grant it <code>kms:Decrypt</code> and <code>kms:GenerateDataKey</code>. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-import-prereq.html" title="Prerequisites for importing custom model - Amazon Bedrock">docs.aws.amazon.com</a>)</li>
+<li><strong>VPC protection</strong> – run the import job and subsequent inference inside a VPC endpoint to keep all traffic off the public internet. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-import-prereq.html" title="Prerequisites for importing custom model - Amazon Bedrock">docs.aws.amazon.com</a>)</li>
+<li><strong>Cross-account access</strong> – if the S3 bucket lives in a different AWS account, add a bucket policy that allows the Bedrock service principal in <strong>your</strong> account to read the objects. (<a href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-import-prereq.html" title="Prerequisites for importing custom model - Amazon Bedrock">docs.aws.amazon.com</a>)</li>
+</ul>
+<h3 id="quick-pre-flight-checklist">Quick pre-flight checklist<a class="headerlink" href="#quick-pre-flight-checklist" title="Permanent link">&para;</a></h3>
+<ol>
+<li>✅ Convert / fine-tune with <code>transformers==4.45.2</code>, save as Safetensors.</li>
+<li>✅ Zip the HF files (&lt; 200 GB) into an S3 bucket in <code>us-east-1</code>, <code>us-west-2</code>, or <code>eu-central-1</code>.</li>
+<li>✅ Create or let Bedrock create an IAM role with the S3 read policy &amp; Bedrock trust.</li>
+<li>✅ Run <strong>CreateModelImportJob</strong> (console, CLI or SDK) pointing at the S3 URI.</li>
+<li>✅ After <code>Completed</code> status, purchase Provisioned Throughput (or use On-Demand) and call <code>InvokeModel</code>.</li>
+</ol>
+<p>With those pieces in place your custom checkpoint will land in Bedrock and be callable just like any foundation model in the service.</p>
+<hr />
+<h3 id="example-command">Example Command<a class="headerlink" href="#example-command" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>ideaweaver<span class="w"> </span>train<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="w">  </span>--model<span class="w"> </span>Qwen/Qwen1.5-0.5B<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="w">  </span>--dataset<span class="w"> </span>./datasets/training_data.csv<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="w">  </span>--push-to-bedrock<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="w">  </span>--bedrock-model-name<span class="w"> </span>my-qwen2-model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="w">  </span>--bedrock-s3-bucket<span class="w"> </span>aws-bedrock-ideaweaver-bucket<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="w">  </span>--bedrock-role-arn<span class="w"> </span>arn:aws:iam::696364089559:role/bedrock-admin-role<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<h3 id="example-output_4">Example Output<a class="headerlink" href="#example-output_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>🤗 Using model: Qwen/Qwen1.5-0.5B
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>☁️  Will deploy to AWS Bedrock:
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>   Model name: my-qwen2-model
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>   S3 bucket: aws-bedrock-ideaweaver-bucket
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>   Region: us-east-1
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>🚀 Starting model training...
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>✅ Model successfully imported to AWS Bedrock!
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>🎯 Bedrock Model ID: my-qwen2-model
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>💾 Bedrock info saved to: ./my-qwen2-model/bedrock_info.json
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>✅ Training completed successfully!
+<a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>📁 Model saved to: ./my-qwen2-model
+</code></pre></div>
+<p><a href="evaluation/">➡️ Go to the Evaluation Page</a></p>
+<p><a href="aws-bedrock-integration/">➡️ Go to the AWS Bedrock Integration Guide</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,221 @@
+/* Custom styling for IdeaWeaver documentation */
+
+:root {
+  --md-primary-fg-color: #3f51b5;
+  --md-primary-fg-color--light: #5c6bc0;
+  --md-primary-fg-color--dark: #303f9f;
+  --md-accent-fg-color: #ff5722;
+}
+
+/* Hero section styling */
+.hero {
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-primary-fg-color--light));
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: var(--md-primary-fg-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Code blocks enhancement */
+.highlight pre {
+  border-radius: 8px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.highlight .filename {
+  background: var(--md-default-fg-color--lightest);
+  padding: 0.5rem 1rem;
+  border-radius: 4px 4px 0 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Admonitions styling */
+.md-typeset .admonition.tip {
+  border-color: #00c851;
+}
+
+.md-typeset .admonition.warning {
+  border-color: #ff8800;
+}
+
+.md-typeset .admonition.danger {
+  border-color: #ff4444;
+}
+
+/* Navigation enhancement */
+.md-tabs__link {
+  font-weight: 500;
+}
+
+.md-nav__title {
+  font-weight: 600;
+}
+
+/* Table styling */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: white;
+  font-weight: 600;
+}
+
+/* Badge styling */
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+
+.badge {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.badge:hover {
+  background: var(--md-primary-fg-color--dark);
+  color: white;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Custom button styles */
+.btn-primary {
+  background: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--md-primary-fg-color--dark);
+  color: white;
+}
+
+/* Command line styling */
+.terminal {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Roboto Mono', monospace;
+  overflow-x: auto;
+}
+
+.terminal .prompt {
+  color: #569cd6;
+}
+
+.terminal .command {
+  color: #ce9178;
+}
+
+/* Architecture diagram styling */
+.architecture-diagram {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+}
+
+/* Comparison table styling */
+.comparison-table {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.comparison-table th:first-child {
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+
+.comparison-table td {
+  text-align: center;
+}
+
+.comparison-table .good {
+  color: #00c851;
+  font-weight: 600;
+}
+
+.comparison-table .okay {
+  color: #ff8800;
+  font-weight: 600;
+}
+
+.comparison-table .poor {
+  color: #ff4444;
+  font-weight: 600;
+} 
