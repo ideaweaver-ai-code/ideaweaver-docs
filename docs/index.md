@@ -2,10 +2,13 @@
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://your-username.github.io/ideaweaver/)
+[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://ideaweaver-ai-code.github.io/ideaweaver-docs/)
 [![CLI Ready](https://img.shields.io/badge/CLI-Ready-green.svg)](#quick-start)
 
 A comprehensive CLI tool for AI model training, evaluation, and deployment with advanced RAG capabilities and MCP (Model Context Protocol) integration. Train, fine-tune, and deploy language models with enterprise-grade features. Visit: https://github.com/ideaweaver-ai-code/ideaweaver
+
+![IdeaWeaver Architecture](docs/images/ideaweaver-main.gif)
+
 
 ## ✨ Key Features
 

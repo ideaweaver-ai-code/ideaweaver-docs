@@ -117,14 +117,8 @@ ideaweaver mcp call-tool github list_issues --args '{"owner": "your-username/org
 ### 1. Evaluate with Standard Benchmarks
 
 ```bash
-# List available evaluation tasks
-ideaweaver list-tasks
-
 # Run evaluation on specific tasks
-ideaweaver evaluate \
-    --model your-model-path \
-    --tasks hellaswag,arc_easy,winogrande \
-    --output results.json
+ideaweaver evaluate ./downloaded_model --tasks hellaswag,arc_easy,winogrande --output-path results.json
 ```
 
 ## Agents
@@ -133,10 +127,22 @@ ideaweaver evaluate \
 
 ```bash
 # Generate storybooks
-ideaweaver agent generate-storybook \
-    --topic "space exploration" \
-    --agents 3 \
-    --output storybook.md
+ideaweaver agent generate_storybook --theme "brave little mouse" --target-age "3-5"
+```
+
+## Model Fine-tuning
+```bash
+ideaweaver finetune full \
+  --model microsoft/DialoGPT-small \
+  --dataset datasets/instruction_following_sample.json \
+  --output-dir ./test_full_basic \
+  --epochs 5 \
+  --batch-size 2 \
+  --gradient-accumulation-steps 2 \
+  --learning-rate 5e-5 \
+  --max-seq-length 256 \
+  --gradient-checkpointing \
+  --verbose
 ```
 
 ## Configuration Validation
