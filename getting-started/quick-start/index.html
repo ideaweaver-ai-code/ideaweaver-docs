@@ -798,6 +798,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#model-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Fine-tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-validation" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration Validation
@@ -1882,6 +1891,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#model-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Fine-tuning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-validation" class="md-nav__link">
     <span class="md-ellipsis">
       Configuration Validation
@@ -2019,27 +2037,31 @@
 </code></pre></div>
 <h2 id="model-evaluation">Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permanent link">&para;</a></h2>
 <h3 id="1-evaluate-with-standard-benchmarks">1. Evaluate with Standard Benchmarks<a class="headerlink" href="#1-evaluate-with-standard-benchmarks" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># List available evaluation tasks</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ideaweaver<span class="w"> </span>list-tasks
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Run evaluation on specific tasks</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span>--model<span class="w"> </span>your-model-path<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span>--tasks<span class="w"> </span>hellaswag,arc_easy,winogrande<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span>--output<span class="w"> </span>results.json
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Run evaluation on specific tasks</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./downloaded_model<span class="w"> </span>--tasks<span class="w"> </span>hellaswag,arc_easy,winogrande<span class="w"> </span>--output-path<span class="w"> </span>results.json
 </code></pre></div>
 <h2 id="agents">Agents<a class="headerlink" href="#agents" title="Permanent link">&para;</a></h2>
 <h3 id="agents-for-multi-agent-workflows">Agents for Multi-Agent Workflows<a class="headerlink" href="#agents-for-multi-agent-workflows" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Generate storybooks</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>generate-storybook<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span>--topic<span class="w"> </span><span class="s2">&quot;space exploration&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span>--agents<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span>--output<span class="w"> </span>storybook.md
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ideaweaver<span class="w"> </span>agent<span class="w"> </span>generate_storybook<span class="w"> </span>--theme<span class="w"> </span><span class="s2">&quot;brave little mouse&quot;</span><span class="w"> </span>--target-age<span class="w"> </span><span class="s2">&quot;3-5&quot;</span>
+</code></pre></div>
+<h2 id="model-fine-tuning">Model Fine-tuning<a class="headerlink" href="#model-fine-tuning" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>ideaweaver<span class="w"> </span>finetune<span class="w"> </span>full<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span>--model<span class="w"> </span>microsoft/DialoGPT-small<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span>--dataset<span class="w"> </span>datasets/instruction_following_sample.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span>--output-dir<span class="w"> </span>./test_full_basic<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span>--epochs<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span>--gradient-accumulation-steps<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span>--learning-rate<span class="w"> </span>5e-5<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">  </span>--max-seq-length<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span>--gradient-checkpointing<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span>--verbose
 </code></pre></div>
 <h2 id="configuration-validation">Configuration Validation<a class="headerlink" href="#configuration-validation" title="Permanent link">&para;</a></h2>
 <p>Always validate your configurations before running:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Validate training configuration</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>ideaweaver<span class="w"> </span>validate<span class="w"> </span>config/training_config.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Validate training configuration</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>ideaweaver<span class="w"> </span>validate<span class="w"> </span>config/training_config.yaml
 </code></pre></div>
 <h2 id="pro-tips">Pro Tips<a class="headerlink" href="#pro-tips" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2051,13 +2073,13 @@
 </ol>
 <h2 id="common-issues">🚨 Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h2>
 <p><strong>Command not found</strong>: Make sure your virtual environment is activated
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">source</span><span class="w"> </span>ideaweaver-env/bin/activate
 </code></pre></div></p>
 <p><strong>Import errors</strong>: Reinstall requirements if packages are missing
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--force-reinstall
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt<span class="w"> </span>--force-reinstall
 </code></pre></div></p>
 <p><strong>GPU not detected</strong>: Check CUDA installation
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(torch.cuda.is_available())&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(torch.cuda.is_available())&quot;</span>
 </code></pre></div></p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Now that you've got the basics down:</p>
