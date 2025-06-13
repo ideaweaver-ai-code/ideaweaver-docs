@@ -3,11 +3,13 @@
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://ideaweaver-ai-code.github.io/ideaweaver-docs/)
 [![CLI Ready](https://img.shields.io/badge/CLI-Ready-green.svg)](#quick-start)
 
-![IdeaWeaver Architecture](docs/images/ideaweaver-main.gif)
-
 # IdeaWeaver
 
 A comprehensive CLI tool for AI model training, evaluation, and deployment with advanced RAG capabilities and MCP (Model Context Protocol) integration. Train, fine-tune, and deploy language models with enterprise-grade features.
+
+# IdeaWeaver Architecture
+
+![IdeaWeaver Architecture](docs/images/ideaweaver-main.gif)
 
 ## Key Features
 
