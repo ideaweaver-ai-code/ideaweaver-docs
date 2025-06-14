@@ -368,10 +368,6 @@ ideaweaver agent generate-storybook \
 - [CLI Commands](reference/cli-commands.md) - Complete command reference
 - [Configuration Files](reference/configuration.md) - YAML configuration guide
 
-### Guides
-- [Enterprise RAG](guides/enterprise-rag.md) - Production RAG deployments
-- [Fine-tuning Best Practices](guides/fine-tuning.md) - Advanced training techniques
-
 ## 🤝 Community
 
 - **[Contributing](community/contributing.md)** - Join our development community
