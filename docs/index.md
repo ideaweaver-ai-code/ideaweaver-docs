@@ -331,54 +331,6 @@ ideaweaver agent generate-storybook \
     --agents researcher,writer,reviewer \
     --output training-guide.md
 ```
-
-## 🌟 Enterprise Features
-
-## 📈 Performance Benchmarks
-
-### Training Speed Improvements
-- **LoRA Fine-tuning**: 3-5x faster than full parameter training
-- **QLoRA**: 50% memory reduction with minimal quality loss
-
-### RAG System Performance
-- **Query Speed**: <200ms average response time
-- **Accuracy**: 15-25% improvement over baseline RAG
-- **Scalability**: Handles 10M+ documents efficiently
-
-## 🚀 Getting Started
-
-1. **[Installation Guide](getting-started/installation.md)** - Setup in under 5 minutes
-2. **[Quick Start](getting-started/quick-start.md)** - Your first model in 15 minutes  
-3. **[Configuration](getting-started/configuration.md)** - Customize for your needs
-4. **[CLI Reference](reference/cli-commands.md)** - Complete command documentation
-
-## 📚 Documentation
-
-### Getting Started
-- [Installation](getting-started/installation.md) - Complete setup guide
-- [Quick Start](getting-started/quick-start.md) - Essential commands and workflows
-- [Configuration](getting-started/configuration.md) - Customize your setup
-
-### Tutorials  
-- [Model Training](tutorials/model-training.md) - LoRA, QLoRA, and full fine-tuning
-- [RAG Systems](tutorials/rag-systems.md) - Build intelligent retrieval systems
-- [MCP Integration](tutorials/mcp-integration.md) - Connect external services
-
-### Reference
-- [CLI Commands](reference/cli-commands.md) - Complete command reference
-- [Configuration Files](reference/configuration.md) - YAML configuration guide
-
-## 🤝 Community
-
-- **[Contributing](community/contributing.md)** - Join our development community
-- **[Guidelines](community/guidelines.md)** - Code standards and best practices  
-- **[Support](community/support.md)** - Get help and report issues
-- **[Roadmap](community/roadmap.md)** - Upcoming features and improvements
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## CLI Usage Examples
 
 ### Model Training
@@ -392,7 +344,7 @@ ideaweaver train --model google/bert_uncased_L-2_H-128_A-2 \
     --task text_classification \
     --epochs 3 --batch-size 8
 
-# AWS Bedrock deployment training
+# AWS Bedrock deployment training(coming soon)
 ideaweaver train --model meta-llama/Llama-2-7b-hf \
     --dataset ./data/train.csv \
     --push-to-bedrock \
@@ -521,344 +473,49 @@ Example output for check-llm:
    Status: Connected and ready
 ```
 
-## MLflow Model Registration Example
+## 🌟 Enterprise Features
 
-To track experiments and register models with MLflow, follow these steps:
+## 📈 Performance Benchmarks
 
----
+### Training Speed Improvements
+- **LoRA Fine-tuning**: 3-5x faster than full parameter training
+- **QLoRA**: 50% memory reduction with minimal quality loss
 
-### ideaweaver Integrations
+### RAG System Performance
+- **Query Speed**: <200ms average response time
+- **Accuracy**: 15-25% improvement over baseline RAG
+- **Scalability**: Handles 10M+ documents efficiently
 
-![IdeaWeaver Registry Support](images/registry-support.png)
+## 🚀 Getting Started
 
----
+1. **[Installation Guide](getting-started/installation.md)** - Setup in under 5 minutes
+2. **[Quick Start](getting-started/quick-start.md)** - Your first model in 15 minutes  
+3. **[Configuration](getting-started/configuration.md)** - Customize for your needs
+4. **[CLI Reference](reference/cli-commands.md)** - Complete command documentation
 
-### 1. Start the MLflow server
+## 📚 Documentation
 
-```bash
-source ideaweaver-env/bin/activate
-mlflow server --host 127.0.0.1 --port 5000 --backend-store-uri sqlite:///mlflow.db
-```
+### Getting Started
+- [Installation](getting-started/installation.md) - Complete setup guide
+- [Quick Start](getting-started/quick-start.md) - Essential commands and workflows
+- [Configuration](getting-started/configuration.md) - Customize your setup
 
-### 2. Train and register a model
+### Tutorials  
+- [Model Training](tutorials/model-training.md) - LoRA, QLoRA, and full fine-tuning
+- [RAG Systems](tutorials/rag-systems.md) - Build intelligent retrieval systems
+- [MCP Integration](tutorials/mcp-integration.md) - Connect external services
 
-```bash
-ideaweaver train \
-  --model bert-base-uncased \
-  --dataset ./datasets/training_data.csv \
-  --track-experiments \
-  --mlflow-uri http://127.0.0.1:5000 \
-  --mlflow-experiment "MyExperiment" \
-  --register-model
-```
+### Reference
+- [CLI Commands](reference/cli-commands.md) - Complete command reference
+- [Configuration Files](reference/configuration.md) - YAML configuration guide
 
-#### Example Output
-```
-🤗 Using model: bert-base-uncased
-📊 Experiment tracking enabled
-🏷️  Model registration enabled
-🚀 Starting model training...
-2025/06/05 11:08:39 INFO mlflow.tracking.fluent: Experiment with name 'MyExperiment' does not exist. Creating a new experiment.
-...
-```
+## 🤝 Community
 
-#### MLflow UI Example
+- **[Contributing](community/contributing.md)** - Join our development community
+- **[Guidelines](community/guidelines.md)** - Code standards and best practices  
+- **[Support](community/support.md)** - Get help and report issues
+- **[Roadmap](community/roadmap.md)** - Upcoming features and improvements
 
-![MLflow UI Example](images/mlflow_ui_example.png)
+## 📄 License
 
-You can view your run and registered model in the MLflow UI at [http://127.0.0.1:5000](http://127.0.0.1:5000).
-
-## Pushing a Model to Hugging Face Hub
-
-To push a small model to Hugging Face for testing, use a tiny model like `sshleifer/tiny-distilbert-base-cased`:
-
-```bash
-source ideaweaver-env/bin/activate
-ideaweaver train \
-  --model sshleifer/tiny-distilbert-base-cased \
-  --dataset ./datasets/training_data.csv \
-  --push-to-hub \
-  --hub-model-id <your-username>/<your-model-name> \
-  --hf-token <your-hf-token>
-```
-
-- Replace `<your-username>/<your-model-name>` with your Hugging Face username and desired model name.
-- Replace `<your-hf-token>` with your Hugging Face access token.
-- For instructions on creating a token, see the [Hugging Face token documentation](https://huggingface.co/docs/hub/en/security-tokens).
-
-#### Example Output
-```
-🤗 Using model: sshleifer/tiny-distilbert-base-cased
-🚀 Will push to Hub: <your-username>/<your-model-name>
-🚀 Starting model training...
-README.md: 100%|██████████████████████████████████████████████████████████████████████████| 5.17k/5.17k [00:00<00:00, 5.19MB/s]
-model.safetensors: 100%|████████████████████████████████████████████████████████████████████| 438M/438M [00:41<00:00, 10.5MB/s]
-✅ Model successfully pushed to: https://huggingface.co/<your-username>/<your-model-name>
-
-============================================================
-🎉 TRAINING SUMMARY
-============================================================
-📂 Model Path:           ./my-model
-🤖 Base Model:           sshleifer/tiny-distilbert-base-cased
-📊 Dataset:              ./autotrain_projects/my-model
-
-📊 KEY PERFORMANCE METRICS
-----------------------------------------
-📉 Final Train Loss:     1.0997
-🎯 Overall Accuracy:     40.0%
-
-============================================================
-✨ Training completed successfully! Model is ready for use.
-============================================================
-
-✅ Training completed successfully!
-📁 Model saved to: ./my-model
-📤 Pushing to Hugging Face Hub...
-```
-
-#### Hugging Face UI Example
-
-![Hugging Face Model Example](images/hugging_face.png)
-
-## Pushing a Model to DagsHub
-
-To push a small model to DagsHub for testing, use a tiny model like `sshleifer/tiny-distilbert-base-cased`:
-
-```bash
-source ideaweaver-env/bin/activate
-ideaweaver train \
-  --model sshleifer/tiny-distilbert-base-cased \
-  --dataset ./datasets/training_data.csv \
-  --mlflow-uri https://dagshub.com/<your-username>/<your-repo>.mlflow \
-  --dagshub-token <your-dagshub-token> \
-  --dagshub-repo-owner <your-username> \
-  --dagshub-repo-name <your-repo>
-```
-
-- Replace `<your-username>`, `<your-repo>`, and `<your-dagshub-token>` with your DagsHub details.
-- **Create an access token in the [tokens settings menu](https://dagshub.com/user/settings/tokens).**
-- Models logged with MLflow will appear in the DagsHub UI under "Experiments" and "Models" automatically.
-- For more info, see [DagsHub](https://dagshub.com/).
-
-#### Example Output
-```
-🤗 Using model: sshleifer/tiny-distilbert-base-cased
-🚀 Starting model training...
-
-============================================================
-🎉 TRAINING SUMMARY
-============================================================
-📂 Model Path:           ./my-model
-🤖 Base Model:           sshleifer/tiny-distilbert-base-cased
-📊 Dataset:              ./autotrain_projects/my-model
-
-📊 KEY PERFORMANCE METRICS
-----------------------------------------
-📉 Final Train Loss:     1.0986
-🎯 Overall Accuracy:     20.0%
-
-============================================================
-✨ Training completed successfully! Model is ready for use.
-============================================================
-
-✅ Training completed successfully!
-📁 Model saved to: ./my-model
-```
-
----
-### DagsHub UI Example
-
-Once your model is registered, you can view it in the DagsHub Model Registry UI:
-
-![DagsHub Model Registry Screenshot](images/dagshub_repo.png)
-
-You will see your registered models listed, as shown above.
-
----
-### Comet Model Registry Example
-
-You can use Comet to track experiments and register models directly from IdeaWeaver.
-
-#### Training and Registering a Model with Comet
-
-First, activate your environment:
-
-```bash
-source ideaweaver-env/bin/activate
-```
-
-Then run:
-
-```bash
-ideaweaver train \
-  --model sshleifer/tiny-distilbert-base-cased \
-  --dataset ./datasets/training_data.csv \
-  --comet-api-key <your-comet-api-key> \
-  --comet-project my-model-project \
-  --track-experiments --register-model
-```
-
-
-- Replace the API key and project name as needed.
-
-#### Example Output
-```bash
-🤗 Using model: sshleifer/tiny-distilbert-base-cased
-📊 Experiment tracking enabled
-🏷️  Model registration enabled (MLflow/DagsHub/Comet)
-🚀 Starting model training...
-COMET INFO: Experiment is live on comet.com https://www.comet.com/prashant-lakhera/my-model-project/4ea3ce89906d4067abbfe81c4e924a6b
-🏷️  Model registered in Model Registry: ideaweaver-my-model
-🤖 Model pushed to Comet ML
-Successfully registered model 'ideaweaver-my-model'.
-Created version '1' of model 'ideaweaver-my-model'.
-🏷️  Model registered in Model Registry: ideaweaver-my-model
-
-============================================================
-🎉 TRAINING SUMMARY
-============================================================
-📂 Model Path:           ./my-model
-🤖 Base Model:           sshleifer/tiny-distilbert-base-cased
-📊 Dataset:              ./autotrain_projects/my-model
-
-📊 KEY PERFORMANCE METRICS
-----------------------------------------
-📉 Final Train Loss:     1.0986
-🎯 Overall Accuracy:     40.0%
-
-============================================================
-✨ Training completed successfully! Model is ready for use.
-============================================================
-
-COMET INFO: ---------------------------------------------------------------------------------------
-COMET INFO: Comet.ml Experiment Summary
-COMET INFO: ---------------------------------------------------------------------------------------
-COMET INFO:   Data:
-COMET INFO:     display_summary_level : 1
-COMET INFO:     name                  : ideaweaver-my-model
-COMET INFO:     url                   : https://www.comet.com/prashant-lakhera/my-model-project/4ea3ce89906d4067abbfe81c4e924a6b
-COMET INFO:   Metrics:
-COMET INFO:     eval_f1_macro            : 0.19047619047619047
-COMET INFO:     eval_loss                : 1.098659634590149
-COMET INFO:     final_train_loss         : 1.0986
-COMET INFO:     overall_accuracy         : 0.4
-COMET INFO:     train_runtime            : 2.6494
-COMET INFO:     train_samples_per_second : 21.515
-COMET INFO:   Others:
-COMET INFO:     Name : ideaweaver-my-model
-COMET INFO:   Parameters:
-COMET INFO:     base_model     : sshleifer/tiny-distilbert-base-cased
-COMET INFO:     batch_size     : 8
-COMET INFO:     epochs         : 3
-COMET INFO:     learning_rate  : 2e-05
-COMET INFO:     max_seq_length : 128
-COMET INFO:     task           : text_classification
-COMET INFO:   Uploads:
-COMET INFO:     asset               : 5 (1.07 MB)
-COMET INFO:     environment details : 1
-COMET INFO:     filename            : 1
-COMET INFO:     installed packages  : 1
-COMET INFO:     model-element       : 67 (2.02 MB)
-COMET INFO:     source_code         : 2 (41.60 KB)
-COMET INFO: 
-COMET INFO: Successfully registered 'ideaweaver-my-model', version '1.0.0' in workspace 'prashant-lakhera'
-COMET INFO: Please wait for assets to finish uploading (timeout is 10800 seconds)
-COMET INFO: Still uploading 52 file(s), remaining 1.14 MB/1.27 MB
-✅ Training completed successfully!
-📁 Model saved to: ./my-model
-```
-
-#### Comet UI Example
-
-Once your model is registered, you can view it in the Comet Model Registry UI:
-
-![Comet Model Registry Screenshot](images/comet_project.png)
-
-You will see your registered models listed, as shown above.
-
-- [Comet Model Registry Documentation](https://www.comet.com/docs/v2/model-registry/)
-- **Create an API keys [API keys](https://www.comet.com/account-settings/apiKeys)**
-
-**Ready to transform your AI workflow?** [Get started now](getting-started/installation.md) or [join our community](community/contributing.md)! 🚀 
-
-## AWS Bedrock Bring-Your-Own-Model (BYOM) Deployment
-
-Below are the **must-haves before Amazon Bedrock will accept a "bring-your-own-model" (Custom Model Import) job.**
-
-### 1. Prepare the model artifacts
-
-| Requirement | Why it matters |
-| ----------- | -------------- |
-| **Supported architecture**: Llama 2 / 3 family, Mistral, Mixtral, Flan-T5, GPT-BigCode, Qwen 2(+ VL/2.5) | Bedrock recognises only these model configs at import time. ([docs.aws.amazon.com][1]) |
-| **Weights ≤ 200 GB for text, ≤ 100 GB for multimodal** | Larger checkpoints are rejected. ([docs.aws.amazon.com][1]) |
-| **Hugging Face format, stored in S3**<br> * `.safetensors` weights (FP32, FP16 or BF16 only; **no quantised** weights)<br> * `config.json`<br> * `tokenizer.json / tokenizer.model / tokenizer_config.json` | Bedrock's import job reads these exact filenames. ([docs.aws.amazon.com][1]) |
-| **Transformers 4.45.2** used when you fine-tune or convert the model | The import job validates the version tag in `config.json`. ([docs.aws.amazon.com][1]) |
-| **Context length < 128 k tokens** | Upper bound enforced at import. ([docs.aws.amazon.com][1]) |
-| **Licence compliance** | You must have the rights to run the model in Bedrock. ([docs.aws.amazon.com][1]) |
-
-### 2. Set-up inside AWS
-
-| Item | Details |
-| ---- | ------- |
-| **Supported Regions** | `us-east-1`, `us-west-2`, `eu-central-1` for import & inference today. ([docs.aws.amazon.com][1]) |
-| **S3 bucket** in the same Region | Upload the HF files; if the bucket or its KMS key is in another account, grant Bedrock `GetObject / ListBucket` and decrypt permissions. ([docs.aws.amazon.com][2]) |
-| **IAM service role** (or let the console create one) with: <br>• `sts:AssumeRole` trust for `bedrock.amazonaws.com`<br>• Minimal `s3:GetObject`, `s3:ListBucket` on your model path | Bedrock assumes this role during the import job. ([docs.aws.amazon.com][3]) |
-| **Bedrock permissions for the user/CI role running the import** | `bedrock:CreateModelImportJob`, `bedrock:GetModelImportJob`, `bedrock:ListImportedModels`, etc. |
-| **Provisioned or On-Demand throughput** | After import you still need throughput capacity before you can call `InvokeModel`. |
-
-### 3. (Optional but recommended) security & network controls
-
-* **KMS encryption** for the S3 objects and for the model once stored in Bedrock. Bedrock can use your CMK if you grant it `kms:Decrypt` and `kms:GenerateDataKey`. ([docs.aws.amazon.com][2])
-* **VPC protection** – run the import job and subsequent inference inside a VPC endpoint to keep all traffic off the public internet. ([docs.aws.amazon.com][2])
-* **Cross-account access** – if the S3 bucket lives in a different AWS account, add a bucket policy that allows the Bedrock service principal in **your** account to read the objects. ([docs.aws.amazon.com][2])
-
-### Quick pre-flight checklist
-
-1. ✅ Convert / fine-tune with `transformers==4.45.2`, save as Safetensors.
-2. ✅ Zip the HF files (< 200 GB) into an S3 bucket in `us-east-1`, `us-west-2`, or `eu-central-1`.
-3. ✅ Create or let Bedrock create an IAM role with the S3 read policy & Bedrock trust.
-4. ✅ Run **CreateModelImportJob** (console, CLI or SDK) pointing at the S3 URI.
-5. ✅ After `Completed` status, purchase Provisioned Throughput (or use On-Demand) and call `InvokeModel`.
-
-With those pieces in place your custom checkpoint will land in Bedrock and be callable just like any foundation model in the service.
-
-[1]: https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html "Import a customized model into Amazon Bedrock - Amazon Bedrock"
-[2]: https://docs.aws.amazon.com/bedrock/latest/userguide/custom-model-import-prereq.html "Prerequisites for importing custom model - Amazon Bedrock"
-[3]: https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html "Create a service role for model import - Amazon Bedrock"
-
----
-
-### Example Command
-
-```bash
-source ideaweaver-env/bin/activate
-
-ideaweaver train \
-  --model Qwen/Qwen1.5-0.5B \
-  --dataset ./datasets/training_data.csv \
-  --push-to-bedrock \
-  --bedrock-model-name my-qwen2-model \
-  --bedrock-s3-bucket aws-bedrock-ideaweaver-bucket \
-  --bedrock-role-arn arn:aws:iam::696364089559:role/bedrock-admin-role \
-  --batch-size 1 \
-  --verbose
-```
-
-### Example Output
-```
-🤗 Using model: Qwen/Qwen1.5-0.5B
-☁️  Will deploy to AWS Bedrock:
-   Model name: my-qwen2-model
-   S3 bucket: aws-bedrock-ideaweaver-bucket
-   Region: us-east-1
-🚀 Starting model training...
-✅ Model successfully imported to AWS Bedrock!
-🎯 Bedrock Model ID: my-qwen2-model
-💾 Bedrock info saved to: ./my-qwen2-model/bedrock_info.json
-✅ Training completed successfully!
-📁 Model saved to: ./my-qwen2-model
-```
-
-[➡️ Go to the Evaluation Page](evaluation.md)
-
-[➡️ Go to the AWS Bedrock Integration Guide](aws-bedrock-integration.md)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

@@ -1,21 +1,19 @@
-site_name: IdeaWeaver
-site_description: A comprehensive CLI tool for AI model training, evaluation, and deployment
+site_name: IdeaWeaver Documentation
+site_description: Documentation for IdeaWeaver - AI Model Training and Deployment Platform
 site_author: IdeaWeaver Team
-site_url: https://github.com/ideaweaver-ai-code/ideaweaver
-
-repo_name: ideaweaver-ai-code/ideaweaver
-repo_url: https://github.com/ideaweaver-ai-code/ideaweaver
-edit_uri: edit/main/docs/
+repo_url: https://github.com/yourusername/ideaweaver
+repo_name: IdeaWeaver
 
 theme:
   name: material
-  logo: images/ideaweaver_logo.png
   features:
     - navigation.tabs
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - search.highlight
-    - content.code.copy
+    - search.share
+    - search.suggest
   palette:
     - scheme: default
       primary: indigo
@@ -30,63 +28,61 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 
-extra_css:
-  - stylesheets/extra.css
-
 markdown_extensions:
-  - admonition
-  - attr_list
-  - def_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
   - footnotes
-  - md_in_html
+  - admonition
   - toc:
       permalink: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
 
 plugins:
   - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: datetime
 
 nav:
   - Home: index.md
   - Getting Started:
     - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quick-start.md
-  - Downloads:
-    - Overview: downloads/overview.md
-    - Commands: downloads/commands.md
-  - Validation:
-    - Overview: validation/overview.md
-    - Commands: validation/commands.md
-  #- Model Comparison:
-  #  - Overview: comparison/overview.md
-  #  - Commands: comparison/commands.md
-  - RAG:
-    - Overview: rag/overview.md
-    - Commands: rag/commands.md
-    - Evaluation: rag/evaluation.md
-  - Training:
-    - Training Output: training/train-output.md
-  - Fine-tuning:
-    - Overview: fine-tuning/overview.md
-    - Commands: fine-tuning/commands.md
-    - Examples: fine-tuning/examples.md
-  - Agent:
-    - Overview: agent/overview.md
-    - Commands: agent/commands.md
+    - Quick Start: getting-started/quickstart.md
+    - Configuration: getting-started/configuration.md
+  - User Guide:
+    - Training: training/training.md
+    - Model Registry:
+      - Overview: training/model-registry.md
+      - MLflow: training/mlflow-registry.md
+      - DagsHub: training/dagshub-registry.md
+      - Comet: training/comet-registry.md
+      - Hugging Face: training/huggingface-registry.md
+      - AWS Bedrock: training/bedrock-registry.md
+    - Evaluation: evaluation.md
+    - Deployment: deployment.md
   - MCP:
-    - GitHub Integration: mcp/github.md
+    - Overview: mcp/mcp.md
     - AWS Integration: mcp/aws.md
     - Terraform Integration: mcp/terraform.md
-  - Evaluation:
-    -  Evaluation: evaluation/evaluation.md 
-  #- Reference:
-  #  - CLI Commands: reference/cli-commands.md
   - Community:
-    - Contributing: community/contributing.md
-    - Support: community/support.md
-  #-  Langfuse Monitoring: langfuse.md
+    - Guidelines: community/guidelines.md
+    - Roadmap: community/roadmap.md
+  - API Reference:
+    - Python API: api/python.md
+    - REST API: api/rest.md
+    - CLI Reference: api/cli.md
+  - Contributing:
+    - Development Guide: contributing/development.md
+    - Code Style: contributing/code-style.md
+    - Testing: contributing/testing.md
+    - Documentation: contributing/documentation.md
+  - Troubleshooting:
+    - Common Issues: troubleshooting/common-issues.md
+    - FAQ: troubleshooting/faq.md
+    - Support: troubleshooting/support.md
