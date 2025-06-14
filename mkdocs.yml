@@ -33,8 +33,8 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.arithmatex:
       generic: true
   - footnotes
@@ -42,47 +42,53 @@ markdown_extensions:
   - toc:
       permalink: true
 
-plugins:
-  - search
-  - minify:
-      minify_html: true
-  - git-revision-date-localized:
-      type: datetime
-
 nav:
   - Home: index.md
   - Getting Started:
     - Installation: getting-started/installation.md
-    - Quick Start: getting-started/quickstart.md
+    - Quick Start: getting-started/quick-start.md
     - Configuration: getting-started/configuration.md
-  - User Guide:
-    - Training: training/training.md
-    - Model Registry:
-      - Overview: training/model-registry.md
-      - MLflow: training/mlflow-registry.md
-      - DagsHub: training/dagshub-registry.md
-      - Comet: training/comet-registry.md
-      - Hugging Face: training/huggingface-registry.md
-      - AWS Bedrock: training/bedrock-registry.md
-    - Evaluation: evaluation.md
-    - Deployment: deployment.md
+  - Agent:
+    - Overview: agent/overview.md
+    - Commands: agent/commands.md
+    - Examples: agent/examples.md
+  - RAG:
+    - Overview: rag/overview.md
+    - Commands: rag/commands.md
+    - Evaluation: rag/evaluation.md
+  - Fine-Tuning:
+    - Overview: fine-tuning/overview.md
+    - Commands: fine-tuning/commands.md
+    - Fine-Tuning Methods: fine-tuning/fine-tuning-methods.md
+    - Examples: fine-tuning/examples.md
+  - Validation:
+    - Overview: validation/overview.md
+    - Commands: validation/commands.md
+  - Training:
+    - Train Output: training/train-output.md
+    - MLflow: training/mlflow-registry.md
+    - DagsHub: training/dagshub-registry.md
+    - Comet: training/comet-registry.md
+    - Hugging Face: training/huggingface-registry.md
+    - AWS Bedrock: training/bedrock-registry.md
+  - Model Registry:
+    - MLflow: training/mlflow-registry.md
+    - DagsHub: training/dagshub-registry.md
+    - Comet: training/comet-registry.md
+    - Hugging Face: training/huggingface-registry.md
+    - AWS Bedrock: training/bedrock-registry.md
+  - Evaluation:
+    - Evaluation: evaluation/evaluation.md
   - MCP:
-    - Overview: mcp/mcp.md
     - AWS Integration: mcp/aws.md
     - Terraform Integration: mcp/terraform.md
+    - GitHub Integration: mcp/github.md
   - Community:
     - Guidelines: community/guidelines.md
     - Roadmap: community/roadmap.md
-  - API Reference:
-    - Python API: api/python.md
-    - REST API: api/rest.md
-    - CLI Reference: api/cli.md
+  #- API Reference:
+  #  - CLI Commands: reference/cli-commands.md
   - Contributing:
-    - Development Guide: contributing/development.md
-    - Code Style: contributing/code-style.md
-    - Testing: contributing/testing.md
-    - Documentation: contributing/documentation.md
+    - Contributing Guide: community/contributing.md
   - Troubleshooting:
-    - Common Issues: troubleshooting/common-issues.md
-    - FAQ: troubleshooting/faq.md
-    - Support: troubleshooting/support.md
+    - Support: community/support.md
