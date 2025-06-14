@@ -12,24 +12,28 @@
         <meta name="author" content="IdeaWeaver Team">
       
       
-        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/ideaweaver_architecture/">
+        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/mcp/aws/">
       
       
+        <link rel="prev" href="../github/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+        <link rel="next" href="../terraform/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Ideaweaver architecture - IdeaWeaver</title>
+        <title>AWS Integration - IdeaWeaver</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#aws-cloudformation-mcp-integration" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,9 +94,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="IdeaWeaver" class="md-header__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
+    <a href="../.." title="IdeaWeaver" class="md-header__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
       
-  <img src="../images/ideaweaver_logo.png" alt="logo">
+  <img src="../../images/ideaweaver_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -104,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ideaweaver architecture
+              AWS Integration
             
           </span>
         </div>
@@ -215,7 +224,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -236,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../getting-started/installation/" class="md-tabs__link">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
           
   
   
@@ -256,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../downloads/overview/" class="md-tabs__link">
+        <a href="../../downloads/overview/" class="md-tabs__link">
           
   
   
@@ -276,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../validation/overview/" class="md-tabs__link">
+        <a href="../../validation/overview/" class="md-tabs__link">
           
   
   
@@ -296,7 +305,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../rag/overview/" class="md-tabs__link">
+        <a href="../../rag/overview/" class="md-tabs__link">
           
   
   
@@ -316,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../training/train-output/" class="md-tabs__link">
+        <a href="../../training/train-output/" class="md-tabs__link">
           
   
   
@@ -336,7 +345,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../fine-tuning/overview/" class="md-tabs__link">
+        <a href="../../fine-tuning/overview/" class="md-tabs__link">
           
   
   
@@ -356,7 +365,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../agent/overview/" class="md-tabs__link">
+        <a href="../../agent/overview/" class="md-tabs__link">
           
   
   
@@ -372,11 +381,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../mcp/github/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../github/" class="md-tabs__link">
           
   
   
@@ -396,7 +407,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../evaluation/" class="md-tabs__link">
+        <a href="../../evaluation/evaluation/" class="md-tabs__link">
           
   
   
@@ -416,7 +427,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../community/contributing/" class="md-tabs__link">
+        <a href="../../community/contributing/" class="md-tabs__link">
           
   
   
@@ -450,9 +461,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="IdeaWeaver" class="md-nav__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
+    <a href="../.." title="IdeaWeaver" class="md-nav__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
       
-  <img src="../images/ideaweaver_logo.png" alt="logo">
+  <img src="../../images/ideaweaver_logo.png" alt="logo">
 
     </a>
     IdeaWeaver
@@ -479,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -544,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/installation/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -567,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/quick-start/" class="md-nav__link">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
         
   
   
@@ -640,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../downloads/overview/" class="md-nav__link">
+      <a href="../../downloads/overview/" class="md-nav__link">
         
   
   
@@ -663,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../downloads/commands/" class="md-nav__link">
+      <a href="../../downloads/commands/" class="md-nav__link">
         
   
   
@@ -736,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/overview/" class="md-nav__link">
+      <a href="../../validation/overview/" class="md-nav__link">
         
   
   
@@ -759,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/commands/" class="md-nav__link">
+      <a href="../../validation/commands/" class="md-nav__link">
         
   
   
@@ -832,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rag/overview/" class="md-nav__link">
+      <a href="../../rag/overview/" class="md-nav__link">
         
   
   
@@ -855,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rag/commands/" class="md-nav__link">
+      <a href="../../rag/commands/" class="md-nav__link">
         
   
   
@@ -878,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rag/evaluation/" class="md-nav__link">
+      <a href="../../rag/evaluation/" class="md-nav__link">
         
   
   
@@ -951,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../training/train-output/" class="md-nav__link">
+      <a href="../../training/train-output/" class="md-nav__link">
         
   
   
@@ -1024,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fine-tuning/overview/" class="md-nav__link">
+      <a href="../../fine-tuning/overview/" class="md-nav__link">
         
   
   
@@ -1047,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fine-tuning/commands/" class="md-nav__link">
+      <a href="../../fine-tuning/commands/" class="md-nav__link">
         
   
   
@@ -1070,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fine-tuning/examples/" class="md-nav__link">
+      <a href="../../fine-tuning/examples/" class="md-nav__link">
         
   
   
@@ -1143,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent/overview/" class="md-nav__link">
+      <a href="../../agent/overview/" class="md-nav__link">
         
   
   
@@ -1166,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent/commands/" class="md-nav__link">
+      <a href="../../agent/commands/" class="md-nav__link">
         
   
   
@@ -1193,26 +1204,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
@@ -1225,7 +1241,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             MCP
@@ -1239,12 +1255,256 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/github/" class="md-nav__link">
+      <a href="../github/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     GitHub Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    AWS Integration
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS Integration
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-s3-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      List S3 Buckets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-ec2-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      List EC2 Instances
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-s3-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an S3 Bucket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terraform/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Terraform Integration
     
   </span>
   
@@ -1312,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
+      <a href="../../evaluation/evaluation/" class="md-nav__link">
         
   
   
@@ -1385,7 +1645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/contributing/" class="md-nav__link">
+      <a href="../../community/contributing/" class="md-nav__link">
         
   
   
@@ -1408,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/support/" class="md-nav__link">
+      <a href="../../community/support/" class="md-nav__link">
         
   
   
@@ -1448,6 +1708,172 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      List Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-s3-buckets" class="md-nav__link">
+    <span class="md-ellipsis">
+      List S3 Buckets
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-ec2-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      List EC2 Instances
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create Resources
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-s3-bucket" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create an S3 Bucket
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Environment Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1466,40 +1892,88 @@
   
 
 
-  <h1>Ideaweaver architecture</h1>
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph TD
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    %% Main components
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    IdeaWeaver[IdeaWeaver] --&gt; CrewAI[CrewAI]
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    %% Specialized Generators
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    CrewAI --&gt; Storybook[Storybook Generator]
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    CrewAI --&gt; LinkedIn[LinkedIn Post Generator]
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    CrewAI --&gt; Research[Research Writer Generator]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    CrewAI --&gt; Stock[Stock Analysis Generator]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    CrewAI --&gt; Travel[Travel Planner Generator]
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    %% Styling
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    classDef ideaweaver fill:#4A90E2,stroke:#2171C7,color:white,stroke-width:2px
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    classDef crewai fill:#50E3C2,stroke:#2BB8A3,color:white,stroke-width:2px
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    classDef generator fill:#F5A623,stroke:#D68910,color:white,stroke-width:2px
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    %% Apply styles
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    class IdeaWeaver ideaweaver
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    class CrewAI crewai
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    class Storybook,LinkedIn,Research,Stock,Travel generator
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    %% Add descriptions
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    Storybook -.-&gt; |&quot;Generate engaging and age-appropriate storybooks&quot;| StorybookDesc[Storybook Generation]
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    LinkedIn -.-&gt; |&quot;Create viral LinkedIn content&quot;| LinkedInDesc[LinkedIn Content]
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    Research -.-&gt; |&quot;Research and write comprehensive content&quot;| ResearchDesc[Research &amp; Writing]
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    Stock -.-&gt; |&quot;Analyze stocks and provide recommendations&quot;| StockDesc[Stock Analysis]
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    Travel -.-&gt; |&quot;Create detailed travel plans&quot;| TravelDesc[Travel Planning]
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    %% Style descriptions
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    classDef desc fill:#F8F9FA,stroke:#E9ECEF,color:#212529,stroke-width:1px
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    class StorybookDesc,LinkedInDesc,ResearchDesc,StockDesc,TravelDesc desc
+<h1 id="aws-cloudformation-mcp-integration">AWS CloudFormation MCP Integration<a class="headerlink" href="#aws-cloudformation-mcp-integration" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>IdeaWeaver provides seamless integration with AWS CloudFormation through the Model Context Protocol (MCP), allowing you to manage AWS resources programmatically.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Set up AWS authentication:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>setup-auth<span class="w"> </span>awslabs.cfn-mcp-server
+</code></pre></div></p>
+</li>
+<li>
+<p>Enable AWS CloudFormation server:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>awslabs.cfn-mcp-server
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="common-operations">Common Operations<a class="headerlink" href="#common-operations" title="Permanent link">&para;</a></h2>
+<h3 id="list-resources">List Resources<a class="headerlink" href="#list-resources" title="Permanent link">&para;</a></h3>
+<h4 id="list-s3-buckets">List S3 Buckets<a class="headerlink" href="#list-s3-buckets" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>awslabs.cfn-mcp-server<span class="w"> </span>list_resources<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;resource_type&quot;: &quot;AWS::S3::Bucket&quot;}&#39;</span>
 </code></pre></div>
+<h4 id="list-ec2-instances">List EC2 Instances<a class="headerlink" href="#list-ec2-instances" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>awslabs.cfn-mcp-server<span class="w"> </span>list_resources<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;resource_type&quot;: &quot;AWS::EC2::Instance&quot;}&#39;</span>
+</code></pre></div>
+<h3 id="create-resources">Create Resources<a class="headerlink" href="#create-resources" title="Permanent link">&para;</a></h3>
+<h4 id="create-an-s3-bucket">Create an S3 Bucket<a class="headerlink" href="#create-an-s3-bucket" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>awslabs.cfn-mcp-server<span class="w"> </span>create_resource<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;resource_type&quot;: &quot;AWS::S3::Bucket&quot;, &quot;desired_state&quot;: {&quot;BucketName&quot;: &quot;my-test-bucket-12345&quot;}}&#39;</span>
+</code></pre></div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="required-environment-variables">Required Environment Variables<a class="headerlink" href="#required-environment-variables" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># AWS Credentials</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_ACCESS_KEY_ID</span><span class="o">=</span>AKIAXXXXXXXXXXXX
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_SECRET_ACCESS_KEY</span><span class="o">=</span>xxxxxxxxxxxx
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AWS_DEFAULT_REGION</span><span class="o">=</span>us-east-1
+</code></pre></div>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Authentication Failures</strong></li>
+<li>Verify AWS credentials are correct</li>
+<li>Check environment variables are set</li>
+<li>
+<p>Ensure IAM user has necessary permissions</p>
+</li>
+<li>
+<p><strong>Resource Creation Failures</strong></p>
+</li>
+<li>Check resource naming conflicts</li>
+<li>Verify resource limits in your AWS account</li>
+<li>Ensure IAM permissions include resource creation rights</li>
+</ol>
+<h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
+<p>Enable verbose output for debugging:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>awslabs.cfn-mcp-server<span class="w"> </span>list_resources<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;resource_type&quot;: &quot;AWS::S3::Bucket&quot;}&#39;</span><span class="w"> </span>--verbose
+</code></pre></div>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Security</strong></li>
+<li>Use IAM roles with least privilege</li>
+<li>Rotate AWS credentials regularly</li>
+<li>
+<p>Never commit AWS credentials to version control</p>
+</li>
+<li>
+<p><strong>Resource Management</strong></p>
+</li>
+<li>Use meaningful resource names</li>
+<li>Implement proper tagging strategy</li>
+<li>
+<p>Monitor resource usage and costs</p>
+</li>
+<li>
+<p><strong>Error Handling</strong></p>
+</li>
+<li>Implement proper error checking</li>
+<li>Use verbose mode for debugging</li>
+<li>Monitor AWS CloudWatch logs </li>
+</ol>
 
 
 
@@ -1554,10 +2028,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

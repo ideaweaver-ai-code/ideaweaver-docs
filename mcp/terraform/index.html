@@ -12,28 +12,28 @@
         <meta name="author" content="IdeaWeaver Team">
       
       
-        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/evaluation/">
+        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/mcp/terraform/">
       
       
-        <link rel="prev" href="../mcp/github/">
+        <link rel="prev" href="../aws/">
       
       
-        <link rel="next" href="../community/contributing/">
+        <link rel="next" href="../../evaluation/evaluation/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Evaluation - IdeaWeaver</title>
+        <title>Terraform Integration - IdeaWeaver</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,9 +52,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#evaluation" class="md-skip">
+        <a href="#terraform-mcp-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -94,9 +94,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="IdeaWeaver" class="md-header__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
+    <a href="../.." title="IdeaWeaver" class="md-header__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
       
-  <img src="../images/ideaweaver_logo.png" alt="logo">
+  <img src="../../images/ideaweaver_logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Evaluation
+              Terraform Integration
             
           </span>
         </div>
@@ -224,7 +224,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -245,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../getting-started/installation/" class="md-tabs__link">
+        <a href="../../getting-started/installation/" class="md-tabs__link">
           
   
   
@@ -265,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../downloads/overview/" class="md-tabs__link">
+        <a href="../../downloads/overview/" class="md-tabs__link">
           
   
   
@@ -285,7 +285,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../validation/overview/" class="md-tabs__link">
+        <a href="../../validation/overview/" class="md-tabs__link">
           
   
   
@@ -305,7 +305,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../rag/overview/" class="md-tabs__link">
+        <a href="../../rag/overview/" class="md-tabs__link">
           
   
   
@@ -325,7 +325,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../training/train-output/" class="md-tabs__link">
+        <a href="../../training/train-output/" class="md-tabs__link">
           
   
   
@@ -345,7 +345,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../fine-tuning/overview/" class="md-tabs__link">
+        <a href="../../fine-tuning/overview/" class="md-tabs__link">
           
   
   
@@ -365,31 +365,11 @@
     
     
       <li class="md-tabs__item">
-        <a href="../agent/overview/" class="md-tabs__link">
+        <a href="../../agent/overview/" class="md-tabs__link">
           
   
   
   Agent
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../mcp/github/" class="md-tabs__link">
-          
-  
-  
-  MCP
 
         </a>
       </li>
@@ -407,7 +387,27 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../github/" class="md-tabs__link">
+          
+  
+  
+  MCP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../evaluation/evaluation/" class="md-tabs__link">
           
   
   
@@ -427,7 +427,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../community/contributing/" class="md-tabs__link">
+        <a href="../../community/contributing/" class="md-tabs__link">
           
   
   
@@ -461,9 +461,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="IdeaWeaver" class="md-nav__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
+    <a href="../.." title="IdeaWeaver" class="md-nav__button md-logo" aria-label="IdeaWeaver" data-md-component="logo">
       
-  <img src="../images/ideaweaver_logo.png" alt="logo">
+  <img src="../../images/ideaweaver_logo.png" alt="logo">
 
     </a>
     IdeaWeaver
@@ -490,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -555,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/installation/" class="md-nav__link">
+      <a href="../../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -578,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/quick-start/" class="md-nav__link">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
         
   
   
@@ -651,7 +651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../downloads/overview/" class="md-nav__link">
+      <a href="../../downloads/overview/" class="md-nav__link">
         
   
   
@@ -674,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../downloads/commands/" class="md-nav__link">
+      <a href="../../downloads/commands/" class="md-nav__link">
         
   
   
@@ -747,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/overview/" class="md-nav__link">
+      <a href="../../validation/overview/" class="md-nav__link">
         
   
   
@@ -770,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../validation/commands/" class="md-nav__link">
+      <a href="../../validation/commands/" class="md-nav__link">
         
   
   
@@ -843,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rag/overview/" class="md-nav__link">
+      <a href="../../rag/overview/" class="md-nav__link">
         
   
   
@@ -866,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rag/commands/" class="md-nav__link">
+      <a href="../../rag/commands/" class="md-nav__link">
         
   
   
@@ -889,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rag/evaluation/" class="md-nav__link">
+      <a href="../../rag/evaluation/" class="md-nav__link">
         
   
   
@@ -962,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../training/train-output/" class="md-nav__link">
+      <a href="../../training/train-output/" class="md-nav__link">
         
   
   
@@ -1035,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fine-tuning/overview/" class="md-nav__link">
+      <a href="../../fine-tuning/overview/" class="md-nav__link">
         
   
   
@@ -1058,7 +1058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fine-tuning/commands/" class="md-nav__link">
+      <a href="../../fine-tuning/commands/" class="md-nav__link">
         
   
   
@@ -1081,7 +1081,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fine-tuning/examples/" class="md-nav__link">
+      <a href="../../fine-tuning/examples/" class="md-nav__link">
         
   
   
@@ -1154,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent/overview/" class="md-nav__link">
+      <a href="../../agent/overview/" class="md-nav__link">
         
   
   
@@ -1177,85 +1177,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent/commands/" class="md-nav__link">
+      <a href="../../agent/commands/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Commands
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    MCP
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
-            <span class="md-nav__icon md-icon"></span>
-            MCP
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mcp/github/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    GitHub Integration
     
   </span>
   
@@ -1298,15 +1225,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Evaluation
+    MCP
     
   </span>
   
@@ -1314,12 +1241,58 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_10">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Evaluation
+            MCP
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GitHub Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AWS Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1342,7 +1315,7 @@
   
   
   <span class="md-ellipsis">
-    Evaluation
+    Terraform Integration
     
   </span>
   
@@ -1355,7 +1328,7 @@
   
   
   <span class="md-ellipsis">
-    Evaluation
+    Terraform Integration
     
   </span>
   
@@ -1378,19 +1351,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tensorboard-example" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      TensorBoard Example
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TensorBoard Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Operations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tensorboard-ui-example" class="md-nav__link">
+  <a href="#search-for-terraform-modules" class="md-nav__link">
     <span class="md-ellipsis">
-      TensorBoard UI Example
+      Search for Terraform Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-module-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Module Details
     </span>
   </a>
   
@@ -1402,19 +1402,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#weights-biases-wandb-online-example" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Weights &amp; Biases (wandb) Online Example
+      Best Practices
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Weights &amp; Biases (wandb) Online Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wandb-ui-example" class="md-nav__link">
+  <a href="#common-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      wandb UI Example
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
     </span>
   </a>
   
@@ -1425,10 +1443,92 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../evaluation/evaluation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1491,7 +1591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/contributing/" class="md-nav__link">
+      <a href="../../community/contributing/" class="md-nav__link">
         
   
   
@@ -1514,7 +1614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../community/support/" class="md-nav__link">
+      <a href="../../community/support/" class="md-nav__link">
         
   
   
@@ -1564,19 +1664,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tensorboard-example" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      TensorBoard Example
+      Overview
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TensorBoard Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module Operations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Module Operations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#tensorboard-ui-example" class="md-nav__link">
+  <a href="#search-for-terraform-modules" class="md-nav__link">
     <span class="md-ellipsis">
-      TensorBoard UI Example
+      Search for Terraform Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-module-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      Get Module Details
     </span>
   </a>
   
@@ -1588,19 +1715,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#weights-biases-wandb-online-example" class="md-nav__link">
+  <a href="#best-practices" class="md-nav__link">
     <span class="md-ellipsis">
-      Weights &amp; Biases (wandb) Online Example
+      Best Practices
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Weights &amp; Biases (wandb) Online Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#wandb-ui-example" class="md-nav__link">
+  <a href="#common-issues" class="md-nav__link">
     <span class="md-ellipsis">
-      wandb UI Example
+      Common Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debug Mode
     </span>
   </a>
   
@@ -1608,6 +1753,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next Steps
+    </span>
+  </a>
   
 </li>
       
@@ -1630,140 +1784,96 @@
   
 
 
-<h1 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h1>
-<p>Welcome to the Evaluation section! Here you'll find:
-- How to run model evaluation with IdeaWeaver
-- Examples for both TensorBoard and Weights &amp; Biases (wandb)
-- Screenshots and sample outputs</p>
-<hr />
-<p><img alt="Evaluation Flow" src="../images/evaluation.png" /></p>
-<h2 id="tensorboard-example">TensorBoard Example<a class="headerlink" href="#tensorboard-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./my-qwen2-model<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>--output-path<span class="w"> </span>./evaluation_results.json<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--generate-report<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--report-to<span class="w"> </span>tensorboard<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>--tensorboard-project<span class="w"> </span>my-eval-project<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--verbose
+<h1 id="terraform-mcp-integration">Terraform MCP Integration<a class="headerlink" href="#terraform-mcp-integration" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>IdeaWeaver provides integration with Terraform through the Model Context Protocol (MCP), allowing you to search and manage Terraform modules and providers.</p>
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>Enable Terraform server:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>terraform
+</code></pre></div></p>
+<h2 id="module-operations">Module Operations<a class="headerlink" href="#module-operations" title="Permanent link">&para;</a></h2>
+<h3 id="search-for-terraform-modules">Search for Terraform Modules<a class="headerlink" href="#search-for-terraform-modules" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>terraform<span class="w"> </span>searchModules<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;moduleQuery&quot;: &quot;aws-vpc&quot;}&#39;</span>
 </code></pre></div>
 <p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>🚀 Starting LLM evaluation for model: ./my-qwen2-model
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>📊 Tracking with: tensorboard
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>🚀 TensorBoard tracker initialized
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   📁 Log directory: tensorboard_logs/ideaweaver-evaluation/._my_qwen2_model_20250605_192537
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   🏷️  Experiment: ._my_qwen2_model_20250605_192537
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>   🌐 View with: tensorboard --logdir=tensorboard_logs
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>✅ TensorBoard tracking initialized
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>   📁 Log directory: tensorboard_logs/ideaweaver-evaluation/._my_qwen2_model_20250605_192537
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>✅ Local model found: ./my-qwen2-model
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>wandb: Tracking run with wandb version 0.19.11
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>wandb: W&amp;B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>wandb: WARNING URL not available in offline run
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>✅ Wandb initialized: None
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>📊 Starting evaluation on tasks: hellaswag, arc_easy
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>📁 Output path: ./evaluation_results.json
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>🔧 Running command: lm_eval --model hf --model_args pretrained=./my-qwen2-model --tasks hellaswag,arc_easy --device auto --batch_size 2 --output_path ./evaluation_results.json --log_samples --limit 2 --wandb_args project=None
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>✅ Evaluation completed in 124.13 seconds
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>📋 Evaluation output:
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>hf (pretrained=./my-qwen2-model), gen_kwargs: (None), limit: 2.0, num_fewshot: None, batch_size: 2
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>|  Tasks  |Version|Filter|n-shot| Metric |   |Value|   |Stderr|
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>|---------|------:|------|-----:|--------|---|----:|---|-----:|
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>|arc_easy |      1|none  |     0|acc     |↑  |    0|±  |     0|
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>|         |       |none  |     0|acc_norm|↑  |    1|±  |     0|
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>|hellaswag|      1|none  |     0|acc     |↑  |    0|±  |     0|
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>|         |       |none  |     0|acc_norm|↑  |    0|±  |     0|
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>⚠️  No results.json found, creating basic results structure
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>✅ Results logged to Weights &amp; Biases
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>📊 Logging evaluation results to TensorBoard...
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>   ✅ Logged 0 task results
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>✅ Evaluation completed successfully!
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>📄 Enhanced report saved to: tensorboard_logs/ideaweaver-evaluation/._my_qwen2_model_20250605_192537/evaluation_report_._my-qwen2-model.md
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>📊 Evaluation Summary:
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>✅ Experiment completed!
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>   ⏱️  Duration: 125.60 seconds
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>   📁 Logs saved to: tensorboard_logs/ideaweaver-evaluation/._my_qwen2_model_20250605_192537
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>   🌐 View with: tensorboard --logdir=tensorboard_logs
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>🌐 View results in TensorBoard:
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>   tensorboard --logdir=tensorboard_logs
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>   Then open: http://localhost:6006
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>wandb: 
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>wandb: You can sync this run to the cloud by running:
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>wandb: wandb sync /Users/plakhera/Documents/model-registry/wandb/offline-run-20250605_192537-rt62gdgo
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>wandb: Find logs at: wandb/offline-run-20250605_192537-rt62gdgo/logs
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>📦 **Terraform Module Search Results**
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Available Terraform Modules (top matches) for aws-vpc
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Each result includes:
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  - moduleID: The module ID (format: namespace/name/provider-name/module-version)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  - Name: The name of the module
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>  - Description: A short description of the module
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>  - Downloads: The total number of times the module has been downloaded
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>  - Verified: Verification status of the module
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>  - Published: The date and time when the module was published
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>---
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  - moduleID: Harshrai3112/aws-vpc/aws/1.0.0
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>  - Name: aws-vpc
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>  - Description:
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>  - Downloads: 5016
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>  - Verified: false
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>  - Published: 2021-06-04 08:59:52.979927 +0000 UTC
 </code></pre></div></p>
-<h4 id="tensorboard-ui-example">TensorBoard UI Example<a class="headerlink" href="#tensorboard-ui-example" title="Permanent link">&para;</a></h4>
-<p><img alt="Example: TensorBoard visualization of evaluation metrics" src="../images/tensorboard.png" /></p>
-<hr />
-<h2 id="weights-biases-wandb-online-example">Weights &amp; Biases (wandb) Online Example<a class="headerlink" href="#weights-biases-wandb-online-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">WANDB_MODE</span><span class="o">=</span>online<span class="w"> </span><span class="nv">WANDB_API_KEY</span><span class="o">=</span>XXXXXX<span class="w"> </span>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./my-qwen2-model<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>--output-path<span class="w"> </span>./evaluation_results_wandb<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--generate-report<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--report-to<span class="w"> </span>wandb<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>--wandb-project<span class="w"> </span>my-eval-project<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span>--verbose
+<h3 id="get-module-details">Get Module Details<a class="headerlink" href="#get-module-details" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>terraform<span class="w"> </span>getModuleDetails<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;moduleName&quot;: &quot;terraform-aws-modules/vpc/aws&quot;}&#39;</span>
 </code></pre></div>
-<p>Example output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>🚀 Starting LLM evaluation for model: ./my-qwen2-model
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>📊 Tracking with: wandb
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>✅ Local model found: ./my-qwen2-model
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>wandb: Currently logged in as: laprashant (laprashant-startup) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>wandb: Tracking run with wandb version 0.19.11
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>wandb: Run data is saved locally in /Users/plakhera/Documents/model-registry/wandb/run-20250605_201404-irki0njw
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>wandb: Run `wandb offline` to turn off syncing.
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>wandb: Syncing run autumn-shadow-1
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>wandb: ⭐️ View project at https://wandb.ai/laprashant-startup/my-eval-project
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>wandb: 🚀 View run at https://wandb.ai/laprashant-startup/my-eval-project/runs/irki0njw
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>✅ Wandb initialized: https://wandb.ai/laprashant-startup/my-eval-project/runs/irki0njw
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>📊 Starting evaluation on tasks: hellaswag, arc_easy
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>📁 Output path: ./evaluation_results_wandb
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>🔧 Running command: lm_eval --model hf --model_args pretrained=./my-qwen2-model --tasks hellaswag,arc_easy --device auto --batch_size 2 --output_path ./evaluation_results_wandb --log_samples --limit 2 --wandb_args project=my-eval-project
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>✅ Evaluation completed in 117.12 seconds
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>📋 Evaluation output:
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>hf (pretrained=./my-qwen2-model), gen_kwargs: (None), limit: 2.0, num_fewshot: None, batch_size: 2
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>|  Tasks  |Version|Filter|n-shot| Metric |   |Value|   |Stderr|
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>|---------|------:|------|-----:|--------|---|----:|---|-----:|
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>|arc_easy |      1|none  |     0|acc     |↑  |    0|±  |     0|
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>|         |       |none  |     0|acc_norm|↑  |    1|±  |     0|
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>|hellaswag|      1|none  |     0|acc     |↑  |    0|±  |     0|
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>|         |       |none  |     0|acc_norm|↑  |    0|±  |     0|
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>⚠️  No results.json found, creating basic results structure
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>✅ Results logged to Weights &amp; Biases
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>✅ Evaluation completed successfully!
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>📄 Evaluation report saved to: evaluation_report_._my-qwen2-model.md
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>📄 Report saved to: evaluation_report_._my-qwen2-model.md
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
-<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>📊 Evaluation Summary:
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>   dummy_task - dummy_metric: 1.0000
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>wandb: 
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>wandb: Run history:
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>wandb: dummy_task_dummy_metric ▁
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>wandb:     evaluation_duration ▁
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>wandb:               num_tasks ▁
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>wandb: 
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>wandb: Run summary:
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>wandb: dummy_task_dummy_metric 1
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>wandb:     evaluation_duration 117.1197
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>wandb:               num_tasks 2
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>wandb: 
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>wandb: 🚀 View run autumn-shadow-1 at: https://wandb.ai/laprashant-startup/my-eval-project/runs/irki0njw
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>wandb: ⭐️ View project at: https://wandb.ai/laprashant-startup/my-eval-project
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>wandb: Synced 5 W&amp;B file(s), 1 media file(s), 2 artifact file(s) and 0 other file(s)
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>wandb: Find logs at: ./wandb/run-20250605_201404-irki0njw/logs
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>✅ Wandb run finished
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>/opt/homebrew/Cellar/python@3.12/3.12.10_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/tempfile.py:940: ResourceWarning: Implicitly cleaning up &lt;TemporaryDirectory &#39;/var/folders/zh/6p21kgbs2p192mpqm1csfd3r0000gn/T/tmpr6z8m8xf&#39;&gt;
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>  _warnings.warn(warn_message, ResourceWarning)
-</code></pre></div></p>
-<h4 id="wandb-ui-example">wandb UI Example<a class="headerlink" href="#wandb-ui-example" title="Permanent link">&para;</a></h4>
-<p><img alt="Example: wandb visualization of evaluation metrics" src="../images/wandb.png" /> </p>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Module Selection</strong></li>
+<li>Check module verification status</li>
+<li>Review download statistics</li>
+<li>Read module documentation</li>
+<li>
+<p>Verify module compatibility</p>
+</li>
+<li>
+<p><strong>Version Management</strong></p>
+</li>
+<li>Use specific version numbers</li>
+<li>Test module updates in staging</li>
+<li>
+<p>Keep track of module dependencies</p>
+</li>
+<li>
+<p><strong>Security</strong></p>
+</li>
+<li>Use verified modules when possible</li>
+<li>Review module source code</li>
+<li>Check for known vulnerabilities</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Module Not Found</strong></li>
+<li>Verify module name is correct</li>
+<li>Check module namespace</li>
+<li>
+<p>Ensure module is public</p>
+</li>
+<li>
+<p><strong>Version Conflicts</strong></p>
+</li>
+<li>Check provider version compatibility</li>
+<li>Verify module version exists</li>
+<li>Review version constraints</li>
+</ol>
+<h3 id="debug-mode">Debug Mode<a class="headerlink" href="#debug-mode" title="Permanent link">&para;</a></h3>
+<p>Enable verbose output for debugging:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ideaweaver<span class="w"> </span>mcp<span class="w"> </span>call-tool<span class="w"> </span>terraform<span class="w"> </span>searchModules<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>--args<span class="w"> </span><span class="s1">&#39;{&quot;moduleQuery&quot;: &quot;aws-vpc&quot;}&#39;</span><span class="w"> </span>--verbose
+</code></pre></div>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Explore Modules</strong>: Search for modules in the Terraform Registry</li>
+<li><strong>Review Documentation</strong>: Read module documentation and examples</li>
+<li><strong>Test Integration</strong>: Try different module operations</li>
+<li><strong>Build Workflows</strong>: Combine with other MCP servers for complex operations </li>
+</ol>
 
 
 
@@ -1818,10 +1928,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

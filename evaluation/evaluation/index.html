@@ -12,13 +12,13 @@
         <meta name="author" content="IdeaWeaver Team">
       
       
-        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/rag/evaluation/">
+        <link rel="canonical" href="https://github.com/ideaweaver-ai-code/ideaweaver/evaluation/evaluation/">
       
       
-        <link rel="prev" href="../commands/">
+        <link rel="prev" href="../../mcp/terraform/">
       
       
-        <link rel="next" href="../../training/train-output/">
+        <link rel="next" href="../../community/contributing/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rag-evaluation" class="md-skip">
+        <a href="#evaluation" class="md-skip">
           Skip to content
         </a>
       
@@ -301,13 +301,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../rag/overview/" class="md-tabs__link">
           
   
   
@@ -403,11 +401,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../evaluation/evaluation/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -797,31 +797,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -834,7 +829,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             RAG
@@ -848,7 +843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../rag/overview/" class="md-nav__link">
         
   
   
@@ -871,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands/" class="md-nav__link">
+      <a href="../../rag/commands/" class="md-nav__link">
         
   
   
@@ -891,32 +886,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Evaluation
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../rag/evaluation/" class="md-nav__link">
         
   
   
@@ -927,131 +900,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#evaluation-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Evaluation Metrics
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#basic-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Basic Evaluation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Evaluation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Evaluation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#custom-test-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Custom Test Questions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#specific-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      Specific Metrics
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compare-knowledge-bases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compare Knowledge Bases
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-test-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Generating Test Questions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Output
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1475,26 +1323,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -1507,7 +1360,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Evaluation
@@ -1518,10 +1371,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../evaluation/evaluation/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1532,6 +1407,197 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command Line Options
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-evaluation-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Evaluation Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Evaluation Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Tasks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-parameters-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Parameters Explained
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample-output-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample Output Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Output Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output-with-limit10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output with Limit=10
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding the Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorboard-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TensorBoard Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-tensorboard-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting TensorBoard Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting TensorBoard Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorboard-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weights-biases-wandb-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weights &amp; Biases (wandb) Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Weights &amp; Biases (wandb) Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-wandb-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic wandb Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-both-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Both Platforms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Both Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wandb-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      wandb UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wandb-setup-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      wandb Setup Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1667,55 +1733,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#evaluation-metrics" class="md-nav__link">
+  <a href="#command-line-options" class="md-nav__link">
     <span class="md-ellipsis">
-      Evaluation Metrics
+      Command Line Options
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#basic-evaluation" class="md-nav__link">
+  <a href="#basic-evaluation-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Evaluation
+      Basic Evaluation Example
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Advanced Evaluation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advanced Evaluation">
+    <nav class="md-nav" aria-label="Basic Evaluation Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom-test-questions" class="md-nav__link">
+  <a href="#understanding-the-tasks" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom Test Questions
+      Understanding the Tasks
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#specific-metrics" class="md-nav__link">
+  <a href="#key-parameters-explained" class="md-nav__link">
     <span class="md-ellipsis">
-      Specific Metrics
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#compare-knowledge-bases" class="md-nav__link">
-    <span class="md-ellipsis">
-      Compare Knowledge Bases
+      Key Parameters Explained
     </span>
   </a>
   
@@ -1727,47 +1775,131 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generating-test-questions" class="md-nav__link">
+  <a href="#sample-output-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      Generating Test Questions
+      Sample Output Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sample Output Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-output-with-limit10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Output with Limit=10
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#example-output" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-the-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Example Output
+      Understanding the Metrics
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#tensorboard-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Troubleshooting
+      TensorBoard Example
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TensorBoard Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-tensorboard-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Starting TensorBoard Server
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting TensorBoard Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tensorboard-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      TensorBoard UI Example
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#weights-biases-wandb-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Next Steps
+      Weights &amp; Biases (wandb) Example
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Weights &amp; Biases (wandb) Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-wandb-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic wandb Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-both-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Both Platforms
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Both Platforms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wandb-ui-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      wandb UI Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wandb-setup-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      wandb Setup Notes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1790,95 +1922,142 @@
   
 
 
-<h1 id="rag-evaluation">RAG Evaluation<a class="headerlink" href="#rag-evaluation" title="Permanent link">&para;</a></h1>
-<p>IdeaWeaver provides comprehensive evaluation capabilities for RAG systems using the RAGAS framework. This allows you to assess the quality and performance of your knowledge bases.</p>
-<h2 id="evaluation-metrics">Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permanent link">&para;</a></h2>
-<p>The RAGAS framework evaluates several key aspects of your RAG system:</p>
+<h1 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h1>
+<p>Welcome to the Evaluation section! Here you'll find:
+- How to run model evaluation with IdeaWeaver
+- Examples for both TensorBoard and Weights &amp; Biases (wandb)
+- Screenshots and sample outputs
+- Detailed command-line options and examples</p>
+<hr />
+<p><img alt="Evaluation Flow" src="images/evaluation.png" /></p>
+<h2 id="command-line-options">Command Line Options<a class="headerlink" href="#command-line-options" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>--help
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Usage:<span class="w"> </span>-c<span class="w"> </span>evaluate<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>MODEL_PATH
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>Evaluate<span class="w"> </span>a<span class="w"> </span>language<span class="w"> </span>model<span class="w"> </span>on<span class="w"> </span>various<span class="w"> </span>benchmarks.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Options:
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>-t,<span class="w"> </span>--tasks<span class="w"> </span>TEXT<span class="w">                </span>Comma-separated<span class="w"> </span>list<span class="w"> </span>of<span class="w"> </span>tasks<span class="w"> </span>to<span class="w"> </span>evaluate<span class="w"> </span>on
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>-s,<span class="w"> </span>--benchmark-suite<span class="w"> </span><span class="o">[</span>standard<span class="p">|</span>reasoning<span class="p">|</span>knowledge<span class="p">|</span>comprehensive<span class="p">|</span>custom<span class="o">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">                                  </span>Predefined<span class="w"> </span>benchmark<span class="w"> </span>suite<span class="w"> </span>to<span class="w"> </span>use
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span>-wp,<span class="w"> </span>--wandb-project<span class="w"> </span>TEXT<span class="w">       </span>Weights<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Biases<span class="w"> </span>project<span class="w"> </span>name
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>-we,<span class="w"> </span>--wandb-entity<span class="w"> </span>TEXT<span class="w">        </span>Weights<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Biases<span class="w"> </span>entity<span class="w"> </span>name
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>-d,<span class="w"> </span>--device<span class="w"> </span>TEXT<span class="w">               </span>Device<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>evaluation<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>auto,<span class="w"> </span>cuda,<span class="w"> </span>cpu<span class="o">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>-b,<span class="w"> </span>--batch-size<span class="w"> </span>INTEGER<span class="w">        </span>Batch<span class="w"> </span>size<span class="w"> </span><span class="k">for</span><span class="w"> </span>evaluation
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span>-f,<span class="w"> </span>--num-fewshot<span class="w"> </span>INTEGER<span class="w">       </span>Number<span class="w"> </span>of<span class="w"> </span>few-shot<span class="w"> </span>examples
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span>-l,<span class="w"> </span>--limit<span class="w"> </span>INTEGER<span class="w">             </span>Limit<span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>samples<span class="w"> </span><span class="k">for</span><span class="w"> </span>testing
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span>-o,<span class="w"> </span>--output-path<span class="w"> </span>TEXT<span class="w">          </span>Path<span class="w"> </span>to<span class="w"> </span>save<span class="w"> </span>evaluation<span class="w"> </span>results
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span>--generate-report<span class="w">               </span>Generate<span class="w"> </span>markdown<span class="w"> </span>evaluation<span class="w"> </span>report
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span>--report-to<span class="w"> </span><span class="o">[</span>wandb<span class="p">|</span>tensorboard<span class="p">|</span>both<span class="p">|</span>none<span class="o">]</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">                                  </span>Experiment<span class="w"> </span>tracking<span class="w"> </span>platform
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span>--tensorboard-project<span class="w"> </span>TEXT<span class="w">      </span>TensorBoard<span class="w"> </span>project<span class="w"> </span>name
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span>--tensorboard-experiment<span class="w"> </span>TEXT<span class="w">   </span>Custom<span class="w"> </span>TensorBoard<span class="w"> </span>experiment<span class="w"> </span>name
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span>-v,<span class="w"> </span>--verbose<span class="w">                   </span>Verbose<span class="w"> </span>output
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span>--help<span class="w">                          </span>Show<span class="w"> </span>this<span class="w"> </span>message<span class="w"> </span>and<span class="w"> </span>exit.
+</code></pre></div>
+<h2 id="basic-evaluation-example">Basic Evaluation Example<a class="headerlink" href="#basic-evaluation-example" title="Permanent link">&para;</a></h2>
+<p>Here's a basic example of running evaluation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./downloaded_model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy,winogrande<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--output-path<span class="w"> </span>results.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span>--report-to<span class="w"> </span>none<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<h3 id="understanding-the-tasks">Understanding the Tasks<a class="headerlink" href="#understanding-the-tasks" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Faithfulness</strong>: Measures if the generated answer is factually consistent with the retrieved context</li>
-<li><strong>Answer Relevancy</strong>: Assesses if the answer is relevant to the question</li>
-<li><strong>Context Relevancy</strong>: Evaluates if the retrieved context is relevant to the question</li>
-<li><strong>Context Recall</strong>: Measures how well the system retrieves all relevant information</li>
-<li><strong>Context Precision</strong>: Assesses the precision of the retrieved information</li>
+<li>HellaSwag – commonsense story completion</li>
+<li>ARC-Easy – grade-school science multiple choice</li>
+<li>Winogrande – pronoun resolution / commonsense coreference</li>
 </ul>
-<h2 id="basic-evaluation">Basic Evaluation<a class="headerlink" href="#basic-evaluation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>evaluate<span class="w"> </span>--kb<span class="w"> </span>my-kb
-</code></pre></div>
-<p>This will:</p>
-<ol>
-<li>Generate test questions</li>
-<li>Run the evaluation</li>
-<li>Display metrics</li>
-<li>Generate a report</li>
-</ol>
-<h2 id="advanced-evaluation">Advanced Evaluation<a class="headerlink" href="#advanced-evaluation" title="Permanent link">&para;</a></h2>
-<h3 id="custom-test-questions">Custom Test Questions<a class="headerlink" href="#custom-test-questions" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>evaluate<span class="w"> </span>--kb<span class="w"> </span>my-kb<span class="w"> </span>--questions-file<span class="w"> </span>custom_questions.json
-</code></pre></div>
-<h3 id="specific-metrics">Specific Metrics<a class="headerlink" href="#specific-metrics" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>evaluate<span class="w"> </span>--kb<span class="w"> </span>my-kb<span class="w"> </span>--metrics<span class="w"> </span>faithfulness,answer_relevancy
-</code></pre></div>
-<h3 id="compare-knowledge-bases">Compare Knowledge Bases<a class="headerlink" href="#compare-knowledge-bases" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>compare-kb<span class="w"> </span>--kb1<span class="w"> </span>kb1<span class="w"> </span>--kb2<span class="w"> </span>kb2
-</code></pre></div>
-<h2 id="generating-test-questions">Generating Test Questions<a class="headerlink" href="#generating-test-questions" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ideaweaver<span class="w"> </span>rag<span class="w"> </span>generate-test-questions<span class="w"> </span>--kb<span class="w"> </span>my-kb
-</code></pre></div>
-<p>Options:</p>
+<h3 id="key-parameters-explained">Key Parameters Explained<a class="headerlink" href="#key-parameters-explained" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>--num-questions</code>: Number of questions to generate</li>
-<li><code>--output-file</code>: Save questions to a file</li>
-<li><code>--question-types</code>: Types of questions to generate</li>
+<li><code>--limit 2</code>: Only scores the first two examples of each task (for pipeline testing)</li>
+<li><code>--batch_size 2</code>: Feeds two prompts to the model at a time (useful for larger models on limited GPUs)</li>
+<li><code>--device auto</code>: Automatically selects CUDA if available, otherwise uses CPU</li>
+<li><code>--log_samples</code>: Generates per-example JSON in addition to aggregate metrics</li>
 </ul>
-<h2 id="example-output">Example Output<a class="headerlink" href="#example-output" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>🤖 Auto-generating 5 test questions
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>🧪 Starting RAGAS evaluation for KB: my-kb
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>📊 Metrics: faithfulness, answer_relevancy
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>📋 Evaluation Results:
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>----------------------------------------
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Faithfulness: 0.85
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Answer Relevancy: 0.92
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>Context Relevancy: 0.88
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Context Recall: 0.90
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Context Precision: 0.87
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>✅ Evaluation completed successfully!
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>📄 Report saved to: evaluation_report_my-kb.md
+<h2 id="sample-output-analysis">Sample Output Analysis<a class="headerlink" href="#sample-output-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="example-output-with-limit10">Example Output with Limit=10<a class="headerlink" href="#example-output-with-limit10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>📋 Evaluation output:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>hf (pretrained=./downloaded_model), gen_kwargs: (None), limit: 10.0, num_fewshot: None, batch_size: 2
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>|  Tasks   |Version|Filter|n-shot| Metric |   |Value|   |Stderr|
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>|----------|------:|------|-----:|--------|---|----:|---|-----:|
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>|arc_easy  |      1|none  |     0|acc     |↑  |  0.4|±  |0.1633|
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>|          |       |none  |     0|acc_norm|↑  |  0.3|±  |0.1528|
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>|hellaswag |      1|none  |     0|acc     |↑  |  0.3|±  |0.1528|
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>|          |       |none  |     0|acc_norm|↑  |  0.3|±  |0.1528|
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>|winogrande|      1|none  |     0|acc     |↑  |  0.7|±  |0.1528|
 </code></pre></div>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>Regular Evaluation</strong>: Evaluate your RAG system regularly as you add new documents</li>
-<li><strong>Multiple Metrics</strong>: Use multiple metrics to get a complete picture</li>
-<li><strong>Custom Questions</strong>: Create domain-specific test questions</li>
-<li><strong>Compare Baselines</strong>: Compare against baseline or previous versions</li>
-<li><strong>Monitor Changes</strong>: Track how metrics change over time</li>
-</ol>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<p>Common issues and solutions:</p>
-<p><strong>Low Faithfulness</strong></p>
+<h3 id="understanding-the-metrics">Understanding the Metrics<a class="headerlink" href="#understanding-the-metrics" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Check document quality</li>
-<li>Review chunking strategy</li>
-<li>Adjust retrieval parameters</li>
+<li>Raw scores (10 questions per benchmark):</li>
+<li>ARC-Easy: 4/10 correct → 0.4</li>
+<li>HellaSwag: 3/10 correct → 0.3</li>
+<li>
+<p>Winogrande: 7/10 correct → 0.7</p>
+</li>
+<li>
+<p>Metric Types:</p>
+</li>
+<li><code>acc</code>: Raw accuracy</li>
+<li><code>acc_norm</code>: Normalized accuracy (after cleanup like stripping articles)</li>
+<li><code>StdErr</code>: Indicates confidence in the score (±0.15 means ±15% potential variation)</li>
 </ul>
-<p><strong>Low Relevancy</strong></p>
+<h2 id="tensorboard-example">TensorBoard Example<a class="headerlink" href="#tensorboard-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./my-qwen2-model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>--output-path<span class="w"> </span>./evaluation_results.json<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>--generate-report<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>--report-to<span class="w"> </span>tensorboard<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span>--tensorboard-project<span class="w"> </span>my-eval-project<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<h3 id="starting-tensorboard-server">Starting TensorBoard Server<a class="headerlink" href="#starting-tensorboard-server" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>pip<span class="w"> </span>install<span class="w"> </span>tensorboard<span class="w">  </span><span class="c1"># Already included in installation</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>nohup<span class="w"> </span>tensorboard<span class="w"> </span>--logdir<span class="w"> </span>logs/<span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Access at http://localhost:6006/</span>
+</code></pre></div>
+<h4 id="tensorboard-ui-example">TensorBoard UI Example<a class="headerlink" href="#tensorboard-ui-example" title="Permanent link">&para;</a></h4>
+<p><img alt="Example: TensorBoard visualization of evaluation metrics" src="images/tensorboard.png" /></p>
+<h2 id="weights-biases-wandb-example">Weights &amp; Biases (wandb) Example<a class="headerlink" href="#weights-biases-wandb-example" title="Permanent link">&para;</a></h2>
+<h3 id="basic-wandb-setup">Basic wandb Setup<a class="headerlink" href="#basic-wandb-setup" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./downloaded_model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span>--output-path<span class="w"> </span>./wandb_results<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span>--generate-report<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span>--report-to<span class="w"> </span>wandb<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span>--wandb-project<span class="w"> </span>my-wandb-eval-project<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span>--wandb-entity<span class="w"> </span>laprashant-startup<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<h3 id="using-both-platforms">Using Both Platforms<a class="headerlink" href="#using-both-platforms" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ideaweaver<span class="w"> </span>evaluate<span class="w"> </span>./downloaded_model<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>--tasks<span class="w"> </span>hellaswag,arc_easy<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>--batch-size<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>--output-path<span class="w"> </span>./wandb_results<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>--generate-report<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>--report-to<span class="w"> </span>both<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span>--wandb-project<span class="w"> </span>my-wandb-eval-project<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span>--wandb-entity<span class="w"> </span>laprashant-startup<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span>--tensorboard-project<span class="w"> </span>my-tensorboard-eval-project<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span>--limit<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">  </span>--verbose
+</code></pre></div>
+<h4 id="wandb-ui-example">wandb UI Example<a class="headerlink" href="#wandb-ui-example" title="Permanent link">&para;</a></h4>
+<p><img alt="Example: wandb visualization of evaluation metrics" src="images/wandb.png" /></p>
+<h3 id="wandb-setup-notes">wandb Setup Notes<a class="headerlink" href="#wandb-setup-notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Improve question understanding</li>
-<li>Optimize embedding model</li>
-<li>Review document preprocessing</li>
-</ul>
-<p><strong>Low Recall</strong></p>
-<ul>
-<li>Increase chunk overlap</li>
-<li>Adjust chunk size</li>
-<li>Review retrieval strategy</li>
-</ul>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../commands/">RAG Commands</a> - Complete command reference</li>
-<li><a href="../overview/">RAG Overview</a> - System architecture and features</li>
-<li><a href="../guides/enterprise-rag.md">Enterprise RAG Guide</a> - Production deployments </li>
+<li>Run <code>wandb login</code> once to set up authentication</li>
+<li>Add <code>--report-to wandb</code> to enable wandb logging</li>
+<li>Optionally specify <code>--wandb-project</code> and <code>--wandb-entity</code></li>
+<li>Note: Evaluation logs only summary metrics at the end, not per-batch metrics </li>
 </ul>
 
 
