@@ -179,6 +179,8 @@ pip install -r requirements.txt --force-reinstall
 python -c "import torch; print(torch.cuda.is_available())"
 ```
 
+⚠️ Note: IdeaWeaver is currently in alpha. Expect a few bugs, and please report any issues you find. If you like the project, drop a ⭐ on GitHub!
+
 ## Next Steps
 
 Now that you've got the basics down:

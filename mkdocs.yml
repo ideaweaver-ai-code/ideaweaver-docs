@@ -80,8 +80,10 @@ nav:
     - Commands: agent/commands.md
   - MCP:
     - GitHub Integration: mcp/github.md
+    - AWS Integration: mcp/aws.md
+    - Terraform Integration: mcp/terraform.md
   - Evaluation:
-    -  Evaluation: evaluation.md 
+    -  Evaluation: evaluation/evaluation.md 
   #- Reference:
   #  - CLI Commands: reference/cli-commands.md
   - Community:

@@ -5,17 +5,14 @@
 IdeaWeaver provides an automated setup script that handles Python 3.12 installation and virtual environment creation:
 
 ```bash
-# One-line installation
-curl -LsSf https://raw.githubusercontent.com/ideaweaver-ai-code/ideaweaver/main/setup_environments.sh | sh
-
-# Or traditional installation
+# Installation
 git clone https://github.com/ideaweaver-ai-code/ideaweaver.git
 cd ideaweaver
 chmod +x setup_environments.sh
 ./setup_environments.sh
 ```
 
-The setup script will:
+The setup will:
 
 - ✅ Detect or install Python 3.12 automatically
 - ✅ Create `ideaweaver-env` virtual environment  
