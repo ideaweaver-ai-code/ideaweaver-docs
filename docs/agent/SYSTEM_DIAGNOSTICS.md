@@ -351,13 +351,13 @@ The system is experiencing moderate load but has a high percentage of time spent
 
 ### Recommendations:
 - **Add Swap Space**: Create a swap file to provide additional virtual memory, which can help alleviate memory pressure. Use the following commands:
-  ```bash
-  sudo fallocate -l 1G /swapfile
-  sudo chmod 600 /swapfile
-  sudo mkswap /swapfile
-  sudo swapon /swapfile
-  echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
-  ```
+```bash
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
 
 ## 4. Network Analysis
 - **Network Interfaces**:
@@ -379,10 +379,10 @@ The network setup appears to be functioning correctly without issues.
 ### Recommendations:
 - **Investigate High CPU Usage**:
   - Review the snapd process; if it's not necessary, consider stopping or disabling it:
-    ```bash
-    sudo systemctl stop snapd
-    sudo systemctl disable snapd
-    ```
+```bash
+sudo systemctl stop snapd
+sudo systemctl disable snapd
+```
 - **Optimize or Restart Resource-Heavy Applications**:
   - Check PID 4410 (python) for performance issues or optimize its code.
 
@@ -453,6 +453,8 @@ By following these recommendations, the overall system performance should improv
 - `OLLAMA_HOST`: Custom Ollama server endpoint (default: localhost:11434)
 
 ## 🏗️ Architecture Overview
+
+![IdeaWeaver System Diagnostics Architecture Overview](ideaweaver_system_arch.jpeg)
 
 ```mermaid
 graph TD
