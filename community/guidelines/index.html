@@ -785,6 +785,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/system_diagnostics.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    System_diagnostics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2461,9 +2484,9 @@
 <li>Include docstrings for all public functions and classes</li>
 </ul>
 <p>Example:
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">process_model_output</span><span class="p">(</span>
+<span class="k">def</span> <span class="nf">process_model_output</span><span class="p">(</span>
     <span class="n">output</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span>
     <span class="n">threshold</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span>
     <span class="n">max_length</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -2532,10 +2555,10 @@
 <li>Mock external dependencies</li>
 </ul>
 <p>Example:
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ideaweaver.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">ModelProcessor</span>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">ideaweaver.core</span> <span class="kn">import</span> <span class="n">ModelProcessor</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">test_model_processor</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">test_model_processor</span><span class="p">():</span>
     <span class="n">processor</span> <span class="o">=</span> <span class="n">ModelProcessor</span><span class="p">()</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="s2">&quot;test input&quot;</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
