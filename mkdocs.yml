@@ -52,7 +52,7 @@ nav:
     - Overview: agent/overview.md
     - Commands: agent/commands.md
     - Examples: agent/examples.md
-    - System_diagnostics: agent/system_diagnostics.md
+    - System_diagnostics: agent/SYSTEM_DIAGNOSTICS.md
   - RAG:
     - Overview: rag/overview.md
     - Commands: rag/commands.md
