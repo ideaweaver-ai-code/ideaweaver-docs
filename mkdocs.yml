@@ -84,6 +84,8 @@ nav:
     - AWS Integration: mcp/aws.md
     - Terraform Integration: mcp/terraform.md
     - GitHub Integration: mcp/github.md
+  - Docker:
+    - Docker: docker/docker.md
   - Community:
     - Guidelines: community/guidelines.md
     - Roadmap: community/roadmap.md
