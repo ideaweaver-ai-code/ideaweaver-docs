@@ -2,7 +2,7 @@
 
 ## 1. Build Docker Image
 
-![Docker](images/ideaweaver-docker.png)
+![Docker](../images/ideaweaver-docker.png)
 
 **Command:**
 ```sh
